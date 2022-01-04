@@ -6,18 +6,16 @@ class PagesController < ApplicationController
 
   # GET /:page
   def show
-    render template: "/pages/#{params[:page]}" if valid_page?
+    render template: "/pages/#{params[:page]}"
   end
 
-  private
+  # # Check if file exists in views/statics
 
-  # Check if file exists in views/statics
-
-  def valid_page?
-    File.exist?(
-      Pathname.new(
-        Rails.root + "app/views/pages/#{params[:page]}.html.erb"
-      )
-    )
-  end
+  # def valid_page?
+  #   File.exist?(
+  #     Pathname.new(
+  #       Rails.root + "app/views/pages/#{params[:page]}.html.erb"
+  #     )
+  #   )
+  # end
 end
