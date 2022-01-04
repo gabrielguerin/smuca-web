@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'pages#show', page: 'home'
 
-  # Statics routes
+  # Pages routes
   get '/:page', to: 'pages#show'
 
   # Devise routes
   devise_for :users
 
-  # User routes
+  # Users routes
   resources :users
 end
