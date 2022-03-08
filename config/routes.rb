@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :contacts
-  resources :companies
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Error pages
@@ -20,4 +18,10 @@ Rails.application.routes.draw do
 
   # Users routes
   resources :users
+
+  # Contacts routes
+  resources :contacts
+
+  # Companies routes
+  resources :companies
 end
