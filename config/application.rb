@@ -16,10 +16,6 @@ module SmucaWeb
 
     config.load_defaults 7.0
 
-    # Add a directory to the load path
-
-    config.autoload_paths << "#{config.root}/lib/modules"
-
     # Configuration for the application, engines, and railties goes here.
 
     # These settings can be overridden in specific environments using the files
