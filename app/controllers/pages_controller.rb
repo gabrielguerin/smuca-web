@@ -3,6 +3,6 @@
 class PagesController < ApplicationController
   # GET /:page
   def show
-    render template: "/pages/#{params[:page]}"
+    render "/pages/#{params[:page]}"
   end
 end
