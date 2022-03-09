@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new
 
     @contact.build_company
-  end
+end
 
   # GET /contacts/1/edit
 
