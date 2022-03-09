@@ -1,0 +1,20 @@
+fr:
+  contact:
+    new:
+      title: 'Nous contacter'
+  helpers:
+    label:
+      contact:
+        first_name: 'Prénom'
+        last_name: 'Nom'
+        email: 'Email'
+        phone: 'Téléphone'  
+      company:
+        company: 'Entreprise'
+    submit:
+      # Default will take effect if no other are specifically defined for the models
+      create: "Créer %{model}"
+      update: "Modifier %{model}"
+      # Model-specific submit button
+      contact:
+        create: "Nous contacter"
