@@ -26,10 +26,8 @@
     <%= form.number_field :phone, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
   <div class="my-5">
-    <%# form.label :company_id %>
-    <%# form.text_field :company_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
     <%= form.fields_for :company do |company_builder| %>
-      <%= company_builder.label :name %>
+      <%= company_builder.label :company %>
       <%= company_builder.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
     <% end %>
   </div>
