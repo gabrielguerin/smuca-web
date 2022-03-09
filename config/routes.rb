@@ -18,4 +18,10 @@ Rails.application.routes.draw do
 
   # Users routes
   resources :users
+
+  # Contacts routes
+  resources :contacts
+
+  # Companies routes
+  resources :companies
 end

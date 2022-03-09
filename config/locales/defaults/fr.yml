@@ -1,0 +1,7 @@
+fr:
+  helpers:
+    label:
+    submit:
+      # Default will take effect if no other are specifically defined for the models
+      create: "Créer %{model}"
+      update: "Modifier %{model}"
