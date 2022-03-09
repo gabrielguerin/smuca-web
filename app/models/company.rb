@@ -2,6 +2,5 @@
 
 class Company < ApplicationRecord
   # Associations
-
   has_many :contacts
 end
