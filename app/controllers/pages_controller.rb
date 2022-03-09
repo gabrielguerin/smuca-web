@@ -2,7 +2,8 @@
 
 class PagesController < ApplicationController
   # GET /:page
+
   def show
-    render "/pages/#{params[:page]}"
+    render params[:page].to_s
   end
 end
