@@ -3,5 +3,5 @@
 class Company < ApplicationRecord
   # Associations
 
-  has_many :comments
+  has_many :contacts
 end
