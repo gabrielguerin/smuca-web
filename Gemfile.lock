@@ -97,6 +97,8 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -181,6 +183,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
+    table_print (1.5.7)
     tailwindcss-rails (2.0.2-x64-mingw32)
       railties (>= 6.0.0)
     thor (1.1.0)
@@ -219,6 +222,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  faker
   importmap-rails
   jbuilder
   pg (~> 1.1)
@@ -227,6 +231,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  table_print
   tailwindcss-rails
   turbo-rails
   tzinfo-data
