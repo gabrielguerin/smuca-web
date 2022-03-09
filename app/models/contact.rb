@@ -2,9 +2,7 @@
 
 class Contact < ApplicationRecord
   # Associations
-
   belongs_to :company
-
   accepts_nested_attributes_for :company
 
   # Validate associated record for company
