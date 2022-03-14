@@ -10,9 +10,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render partial: 'layouts/navbar' %>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <%= render partial: 'layouts/header' %>
+    <main>
       <%= yield %>
     </main>
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>

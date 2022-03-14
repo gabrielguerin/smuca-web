@@ -119,3 +119,7 @@ gem 'faker'
 # Shows objects in nicely formatted columns for easy reading
 
 gem 'table_print'
+
+# Framework for creating flexible, powerful admin dashboards in Rails
+
+gem 'administrate'

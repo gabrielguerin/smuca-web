@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+    resources :companies
+    resources :contacts
+
+    root to: 'contacts#index'
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Error pages
