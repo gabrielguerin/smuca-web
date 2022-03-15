@@ -25,7 +25,11 @@ Rails.application.routes.draw do
 
   # Devise routes
 
-  devise_for :users
+  devise_for :users, controllers: {
+
+    registrations: 'users/registrations'
+
+  }
 
   # Users routes
 
