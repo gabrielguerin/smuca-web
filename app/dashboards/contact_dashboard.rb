@@ -15,7 +15,7 @@ class ContactDashboard < Administrate::BaseDashboard
     first_name: Field::String,
     last_name: Field::String,
     email: Field::String,
-    phone: Field::Number,
+    phone: Field::String,
     created_at: Field::DateTime.with_options(format: '%d/%m/%Y'),
     updated_at: Field::DateTime.with_options(format: '%d/%m/%Y')
   }.freeze
