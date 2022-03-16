@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class ContactDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -14,8 +16,8 @@ class ContactDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     email: Field::String,
     phone: Field::Number,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(format: '%d/%m/%Y'),
+    updated_at: Field::DateTime.with_options(format: '%d/%m/%Y')
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,22 +27,22 @@ class ContactDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     company
-    id
     first_name
     last_name
+    email
+    phone
+    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     company
-    id
     first_name
     last_name
     email
     phone
     created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -69,7 +71,7 @@ class ContactDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how contacts are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(contact)
-  #   "Contact ##{contact.id}"
-  # end
+  def display_resource(contact)
+    "#{contact.first_name} #{contact.last_name}"
+  end
 end
