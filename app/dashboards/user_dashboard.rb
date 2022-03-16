@@ -15,7 +15,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     job_title: Field::String,
     description: Field::Text,
-    phone: Field::Number,
+    phone: Field::String,
     created_at: Field::DateTime.with_options(format: '%d/%m/%Y'),
     updated_at: Field::DateTime.with_options(format: '%d/%m/%Y'),
     email: Field::String,
