@@ -12,25 +12,25 @@
   <div class="grid grid-cols-2 gap-4">
     <div class="relative">
       <%= form.label :first_name, class: "font-medium text-gray-900" %>
-      <%= form.text_field :first_name, class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre prénom" %>
+      <%= form.text_field :first_name, autocomplete: "given-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre prénom" %>
     </div>
     <div class="relative">
       <%= form.label :last_name, class: "font-medium text-gray-900" %>
-      <%= form.text_field :last_name, class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre nom" %>
+      <%= form.text_field :last_name, autocomplete: "family-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre nom" %>
     </div>
   </div>
   <div class="relative">
     <%= form.label :email, class: "font-medium text-gray-900" %>
-    <%= form.text_field :email, class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre email" %>
+    <%= form.text_field :email, autocomplete: "email", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre email" %>
   </div>
   <div class="relative">
     <%= form.label :phone, class: "font-medium text-gray-900" %>
-    <%= form.text_field :phone, class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre téléphone" %>
+    <%= form.text_field :phone, autocomplete: "tel", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre téléphone" %>
   </div>
   <div class="relative">
     <%= form.fields_for :company do |company_builder| %>
       <%= company_builder.label :company, class: "font-medium text-gray-900" %>
-      <%= company_builder.text_field :name, class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre entreprise" %>
+      <%= company_builder.text_field :name, autocomplete: "organization", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre entreprise" %>
     <% end %>
   </div>
   <div class="relative">
