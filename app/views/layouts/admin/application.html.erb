@@ -11,32 +11,34 @@ By default, it renders:
 - Flashes
 - Links to stylesheets and JavaScripts
 %>
-
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
-<head>
-  <meta charset="utf-8">
-  <meta name="ROBOTS" content="NOODP">
-  <meta name="viewport" content="initial-scale=1">
-  <title>
-    <%= content_for(:title) %> - <%= application_title %>
-  </title>
-  <%= render "stylesheet" %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag if defined?(csp_meta_tag) %>
-</head>
-<body>
-  <%= render "icons" %>
-
-  <div class="app-container">
-    <%= render "navigation" -%>
-
-    <main class="main-content" role="main">
-      <%= render "flashes" -%>
-      <%= yield %>
-    </main>
-  </div>
-
-  <%= render "javascript" %>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="ROBOTS" content="NOODP">
+    <meta name="viewport" content="initial-scale=1">
+    <title>
+      <%= content_for(:title) %> - <%= application_title %>
+    </title>
+    <%# render "stylesheet" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag if defined?(csp_meta_tag) %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="bg-gray-50">
+    <%= render 'dashboard_header' %>
+    <%# render "icons" %>
+    <div class="flex overflow-hidden bg-white pt-16">
+      <%= render "navigation" -%>
+      <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
+        <main>
+          <%= render "flashes" -%>
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+    <%= render "javascript" %>
+  </body>
 </html>
