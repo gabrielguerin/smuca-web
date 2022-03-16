@@ -1,4 +1,4 @@
-<%= form_with(model: contact, class: "contents") do |form| %>
+<%= form_with(model: contact) do |form| %>
   <% if contact.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -9,29 +9,31 @@
       </ul>
     </div>
   <% end %>
-  <div class="my-5">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="relative">
+      <%= form.label :first_name, class: "font-medium text-gray-900" %>
+      <%= form.text_field :first_name, autocomplete: "given-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre prénom" %>
+    </div>
+    <div class="relative">
+      <%= form.label :last_name, class: "font-medium text-gray-900" %>
+      <%= form.text_field :last_name, autocomplete: "family-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre nom" %>
+    </div>
   </div>
-  <div class="my-5">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="relative">
+    <%= form.label :email, class: "font-medium text-gray-900" %>
+    <%= form.text_field :email, autocomplete: "email", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre email" %>
   </div>
-  <div class="my-5">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="relative">
+    <%= form.label :phone, class: "font-medium text-gray-900" %>
+    <%= form.text_field :phone, autocomplete: "tel", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre téléphone" %>
   </div>
-  <div class="my-5">
-    <%= form.label :phone %>
-    <%= form.number_field :phone, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
+  <div class="relative">
     <%= form.fields_for :company do |company_builder| %>
-      <%= company_builder.label :company %>
-      <%= company_builder.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      <%= company_builder.label :company, class: "font-medium text-gray-900" %>
+      <%= company_builder.text_field :name, autocomplete: "organization", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre entreprise" %>
     <% end %>
   </div>
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  <div class="relative">
+    <%= form.submit class: "w-full px-3 py-4 font-medium text-white bg-blue-600 rounded-lg hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
   </div>
 <% end %>

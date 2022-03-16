@@ -3,11 +3,14 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :users
+
     resources :companies
+
     resources :contacts
 
     root to: 'contacts#index'
   end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Error pages
@@ -22,11 +25,15 @@ Rails.application.routes.draw do
 
   # Devise routes
 
-  devise_for :users
+  devise_for :users, controllers: {
+
+    registrations: 'users/registrations'
+
+  }
 
   # Users routes
 
-  resources :users
+  resources :users, only: %i[index show]
 
   # Contacts routes
 
