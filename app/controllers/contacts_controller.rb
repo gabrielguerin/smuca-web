@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new
 
     @contact.build_company
-end
+  end
 
   # GET /contacts/1/edit
 
@@ -33,7 +33,10 @@ end
     respond_to do |format|
       if @contact.save
 
-        format.html { redirect_to contact_url(@contact), notice: 'Contact was successfully created.' }
+        format.html do
+          redirect_to root_path,
+                      notice: 'Nous avons bien pris en compte votre demande. Nous allons vous contacter très prochainement.'
+        end
 
         format.json { render :show, status: :created, location: @contact }
 

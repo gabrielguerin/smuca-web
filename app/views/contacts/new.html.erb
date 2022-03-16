@@ -15,6 +15,9 @@
       </div>
       <div class="w-full bg-white lg:w-6/12 xl:w-5/12">
         <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
+          <% if notice.present? %>
+            <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+          <% end %>
           <h4 class="w-full text-3xl font-bold"><%= t('contact.new.title') %></h4>
           <p class="text-lg text-gray-500">ou, si vous préférez, 
             <a href="#_" class="text-blue-600 underline">appelez-nous</a>
