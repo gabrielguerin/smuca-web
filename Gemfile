@@ -123,3 +123,7 @@ gem 'table_print'
 # Framework for creating flexible, powerful admin dashboards in Rails
 
 gem 'administrate'
+
+#  Scope & Engine based, clean, powerful, customizable and sophisticated paginator
+
+gem 'kaminari'
