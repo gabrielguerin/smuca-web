@@ -15,35 +15,40 @@ as well as a link to its edit page.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Show
 %>
-
 <% content_for(:title) { t("administrate.actions.show_resource", name: page.page_title) } %>
-
-<header class="main-content__header" role="banner">
-  <h1 class="main-content__page-title">
-    <%= content_for(:title) %>
-  </h1>
-
-  <div>
-    <%= link_to(
+<div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200">
+  <div class="w-full">
+    <div class="grid overflow-hidden grid-cols-3 grid-rows-1 gap-2">
+      <div class="flex items-center">
+        <h1 class="text-xl sm:text-2xl font-semibold text-gray-900"><%= content_for(:title) %></h1>
+      </div>
+      <div class="box">
+      </div>
+      <div class="flex items-center space-x-2 sm:space-x-3 ml-auto">
+        <%= link_to(
       t("administrate.actions.edit_resource", name: page.page_title),
       [:edit, namespace, page.resource],
-      class: "button",
+      class: "btn btn-primary",
     ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+      </div>
+    </div>
   </div>
-</header>
-
-<section class="main-content__body">
-  <dl>
-    <% page.attributes.each do |attribute| %>
-      <dt class="attribute-label" id="<%= attribute.name %>">
-      <%= t(
+</div>
+<section class="bg-white min-h-screen">
+  <div class="max-w-lg md:p-12">
+    <dl>
+      <% page.attributes.each do |attribute| %>
+        <div class="my-2">
+          <dt class="font-medium text-gray-900 attribute-label" id="<%= attribute.name %>">
+            <%= t(
         "helpers.label.#{resource_name}.#{attribute.name}",
         default: page.resource.class.human_attribute_name(attribute.name),
       ) %>
-      </dt>
-
-      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
+          </dt>
+          <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
           ><%= render_field attribute, page: page %></dd>
-    <% end %>
-  </dl>
+        </div>
+      <% end %>
+    </dl>
+  </div>
 </section>
