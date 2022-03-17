@@ -1,0 +1,12 @@
+<form role="search">
+  <label class="sr-only" for="search">
+    <%= t("administrate.search.label", resource: resource_name) %>
+  </label>
+  <input class="block w-full px-4 py-3 my-2 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+         id="search"
+         type="search"
+         name="search"
+         placeholder="<%= t("administrate.search.label",
+                            resource: resource_name) %>"
+         value="<%= search_term %>">
+</form>
