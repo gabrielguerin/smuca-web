@@ -1,7 +1,7 @@
 <% content_for(:title) do %>
   <%= display_resource_name(page.resource_name) %>
 <% end %>
-<div class="grid overflow-hidden grid-cols-3 grid-rows-1 gap-2">
+<div class="grid grid-cols-3 grid-rows-1 gap-2">
   <div class="flex items-center">
     <h1 class="text-xl sm:text-2xl font-semibold text-gray-900">Tous les <%= content_for(:title) %></h1>
   </div>
@@ -21,7 +21,7 @@
         name: display_resource_name(page.resource_name, singular: true).downcase
       ),
       [:new, namespace, page.resource_path.to_sym],
-      class: "w-1/2 text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-200 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center sm:w-auto",
+      class: "btn btn-accent",
     ) if valid_action?(:new) && show_action?(:new, new_resource) %>
   </div>
 </div>
