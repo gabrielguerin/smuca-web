@@ -13,10 +13,7 @@ This partial renders a textarea element for a text attribute.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Text
 %>
-
-<div class="field-unit__label">
-  <%= f.label field.attribute %>
-</div>
-<div class="field-unit__field">
-  <%= f.text_area field.attribute %>
+<div class="relative">
+  <%= f.label field.attribute, class: "font-medium text-gray-900" %>
+  <%= f.text_area field.attribute, class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" %>
 </div>

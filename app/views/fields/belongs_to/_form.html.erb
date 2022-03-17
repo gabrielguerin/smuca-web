@@ -15,11 +15,8 @@ that displays all possible records to associate with.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/BelongsTo
 %>
-
-<div class="field-unit__label">
-  <%= f.label field.permitted_attribute %>
-</div>
-<div class="field-unit__field">
+<div class="relative">
+  <%= f.label field.permitted_attribute, class: "font-medium text-gray-900" %>
   <%= f.select(field.permitted_attribute,
                options_for_select(field.associated_resource_options, field.selected_option),
                include_blank: field.include_blank_option) %>

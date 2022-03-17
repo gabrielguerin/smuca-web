@@ -13,33 +13,31 @@ and renders all form fields for a resource's editable attributes.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
-
-<%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
-  <% if page.resource.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= t(
+<div class="relative w-full space-y-8">
+  <%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
+    <% if page.resource.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= t(
           "administrate.form.errors",
           pluralized_errors: pluralize(page.resource.errors.count, t("administrate.form.error")),
           resource_name: display_resource_name(page.resource_name, singular: true)
         ) %>
-      </h2>
-
-      <ul>
-        <% page.resource.errors.full_messages.each do |message| %>
-          <li class="flash-error"><%= message %></li>
-        <% end %>
-      </ul>
+        </h2>
+        <ul>
+          <% page.resource.errors.full_messages.each do |message| %>
+            <li class="flash-error"><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% page.attributes(controller.action_name).each do |attribute| -%>
+      <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
+        <%= render_field attribute, f: f %>
+      </div>
+    <% end -%>
+    <div class="form-actions">
+      <%= f.submit class: "w-1/2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center sm:w-auto" %>
     </div>
   <% end %>
-
-  <% page.attributes(controller.action_name).each do |attribute| -%>
-    <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
-      <%= render_field attribute, f: f %>
-    </div>
-  <% end -%>
-
-  <div class="form-actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
