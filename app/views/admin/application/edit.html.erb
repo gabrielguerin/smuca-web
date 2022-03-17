@@ -15,7 +15,7 @@ It displays a header, and renders the `_form` partial to do the heavy lifting.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
 <% content_for(:title) { t("administrate.actions.edit_resource", name: page.page_title) } %>
-<div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5">
+<div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200">
   <div class="w-full">
     <div class="grid overflow-hidden grid-cols-3 grid-rows-1 gap-2">
       <div class="flex items-center">
@@ -27,7 +27,7 @@ It displays a header, and renders the `_form` partial to do the heavy lifting.
         <%= link_to(
       t("administrate.actions.show_resource", name: page.page_title),
       [namespace, page.resource],
-      class: "w-1/2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center sm:w-auto",
+      class: "btn btn-primary",
     ) if valid_action?(:show) && show_action?(:show, page.resource) %>
       </div>
     </div>

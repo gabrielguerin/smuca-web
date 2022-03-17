@@ -33,11 +33,13 @@ and renders all form fields for a resource's editable attributes.
     <% end %>
     <% page.attributes(controller.action_name).each do |attribute| -%>
       <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
-        <%= render_field attribute, f: f %>
+        <div class="my-2">
+          <%= render_field attribute, f: f %>
+        </div>
       </div>
     <% end -%>
     <div class="form-actions">
-      <%= f.submit class: "w-1/2 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center sm:w-auto" %>
+      <%= f.submit class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
