@@ -15,9 +15,7 @@ require 'faker'
 # require 'csv'
 
 # Delete everything
-Contact.delete_all
-Company.delete_all
-User.delete_all
+[Contact, Company, User, Partner].each(&:delete_all)
 
 # Create companies
 50.times do
@@ -56,4 +54,12 @@ end
     company: Company.all.sample
   )
   contact.save!
+end
+
+# Create partners
+5.times do
+  partner = Partner.new(
+    name: Faker::Company.unique.name
+  )
+  partner.save!
 end
