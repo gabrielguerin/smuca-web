@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :partners
   namespace :admin do
     resources :users
 
     resources :companies
 
     resources :contacts
+
+    resources :partners
 
     root to: 'contacts#index'
   end
@@ -43,4 +44,8 @@ Rails.application.routes.draw do
   # Companies routes
 
   resources :companies
+
+  # Partners routes
+
+  resources :partners
 end
