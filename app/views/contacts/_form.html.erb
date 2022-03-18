@@ -9,15 +9,13 @@
       </ul>
     </div>
   <% end %>
-  <div class="grid grid-cols-2 gap-4">
-    <div class="relative">
-      <%= form.label :first_name, class: "font-medium text-gray-900" %>
-      <%= form.text_field :first_name, autocomplete: "given-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre prénom" %>
-    </div>
-    <div class="relative">
-      <%= form.label :last_name, class: "font-medium text-gray-900" %>
-      <%= form.text_field :last_name, autocomplete: "family-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre nom" %>
-    </div>
+  <div class="relative">
+    <%= form.label :first_name, class: "font-medium text-gray-900" %>
+    <%= form.text_field :first_name, autocomplete: "given-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre prénom" %>
+  </div>
+  <div class="relative">
+    <%= form.label :last_name, class: "font-medium text-gray-900" %>
+    <%= form.text_field :last_name, autocomplete: "family-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre nom" %>
   </div>
   <div class="relative">
     <%= form.label :email, class: "font-medium text-gray-900" %>
