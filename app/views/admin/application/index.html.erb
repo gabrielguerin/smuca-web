@@ -22,34 +22,25 @@ It renders the `_table` partial to display details about the resources.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Collection
 %>
-<div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200">
-  <div class="w-full">
-    <%=
-        render("index_header",
-          resources: resources,
-          search_term: search_term,
-          page: page,
-          show_search_bar: show_search_bar,
-        )
-      %>
-  </div>
-</div>
-<div class="flex flex-col">
-  <div class="overflow-x-auto">
-    <div class="align-middle inline-block min-w-full">
-      <div class="shadow overflow-hidden">
-        <%= render(
-          "collection",
-          collection_presenter: page,
-          collection_field_name: resource_name,
-          page: page,
-          resources: resources,
-          table_title: "page-title"
-        ) %>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="bg-white sticky sm:flex items-center text-center w-full sm:justify-between bottom-0 right-0 border-t border-gray-200 p-4">
+
+<%=
+  render("index_header",
+    resources: resources,
+    search_term: search_term,
+    page: page,
+    show_search_bar: show_search_bar,
+  )
+%>
+
+<section class="main-content__body main-content__body--flush">
+  <%= render(
+    "collection",
+    collection_presenter: page,
+    collection_field_name: resource_name,
+    page: page,
+    resources: resources,
+    table_title: "page-title"
+  ) %>
+
   <%= paginate resources, param_name: '_page' %>
-</div>
+</section>
