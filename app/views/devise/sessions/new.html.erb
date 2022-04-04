@@ -26,7 +26,7 @@
           <%= link_to "Mot de passe oublié ?", new_password_path(resource_name), class: "ml-auto text-sm text-blue-700 hover:underline" %>
         <% end %>
       </div>
-      <%= f.button "Accéder à mon dashboard", class: "w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" %>
+      <%= f.button "Accéder à mon dashboard", class: "w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
       <div class="text-sm font-medium text-gray-500">
         Pas encore inscrit ? 
         <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
