@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
     resources :contacts
 
+    resources :partners
+
     root to: 'contacts#index'
   end
 
@@ -42,4 +44,8 @@ Rails.application.routes.draw do
   # Companies routes
 
   resources :companies
+
+  # Partners routes
+
+  resources :partners
 end
