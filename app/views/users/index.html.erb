@@ -1,8 +1,5 @@
 <!-- Section 1 -->
 <section class="relative py-20 overflow-hidden bg-white">
-  <span class="absolute top-0 right-0 flex flex-col items-end mt-0 -mr-16 opacity-60">
-    <span class="container hidden w-screen h-32 max-w-xs mt-20 transform rounded-full rounded-r-none md:block md:max-w-xs lg:max-w-lg 2xl:max-w-3xl bg-blue-50"></span>
-  </span>
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
@@ -11,7 +8,7 @@
     <p class="font-medium tracking-wide text-blue-500 uppercase"><%= t('user.index.title') %></p>
     <h2 class="relative max-w-lg mt-5 mb-10 text-4xl font-semibold leading-tight lg:text-5xl">An incredible team of <br>
       amazing individuals</h2>
-    <div class="grid w-full grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-4">
+    <div class="flex flex-wrap -m-4">
       <%= render @users %>
     </div>
   </div>
