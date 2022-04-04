@@ -1,7 +1,7 @@
-<%= link_to user_path(user), class: "card card-side w-full h-full flex items-center border-gray-200 p-4 shadow-xl hover:bg-gray-100" do %>
+<div class="card card-side w-full h-full flex items-center border-gray-200 p-4 shadow-xl hover:bg-gray-100">
   <%= image_tag(user.avatar, class: "w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4") %>
   <div class="flex-grow">
     <h2 class="text-gray-900 title-font font-medium"><%= user.first_name %> <%= user.last_name %></h2>
     <p class="text-gray-500"><%= user.job_title %></p>
   </div>
-<% end %>
+</div>
