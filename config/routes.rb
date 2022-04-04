@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   # Users routes
 
-  resources :users, only: %i[index show]
+  resources :users, only: %i[index]
 
   # Contacts routes
 
