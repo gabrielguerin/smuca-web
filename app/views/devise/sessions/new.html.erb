@@ -1,38 +1,40 @@
-<section class="bg-white max-w-lg mx-auto my-20">
-  <div class="p-4 w-100 bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-6" }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <h5 class="text-3xl font-medium text-gray-900">Connectez-vous à votre plateforme</h5>
-      <div>
-        <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder:"email@smuca.fr" %>
-      </div>
-      <div>
-        <%= f.label 'Mot de passe', class: "block mb-2 text-sm font-medium text-gray-900" %>
-        <%= f.password_field :password, autocomplete: "current-password", class: "g-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••" %>
-      </div>
-      <div class="flex items-start">
+<section class="bg-gray-100 py-20">
+  <div class="container max-w-lg mx-auto">
+    <div class="p-4 w-100 bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-6" }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <h5 class="text-3xl font-medium text-gray-900">Connectez-vous à votre plateforme</h5>
+        <div>
+          <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder:"email@smuca.fr" %>
+        </div>
+        <div>
+          <%= f.label 'Mot de passe', class: "block mb-2 text-sm font-medium text-gray-900" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "g-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••" %>
+        </div>
         <div class="flex items-start">
-          <% if devise_mapping.rememberable? %>
-            <div class="flex items-center h-5">
-              <%= f.check_box :remember_me, class: "w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300" %>
-            </div>
-            <div class="ml-3 text-sm">
-              <%= f.label "Se souvenir de moi", class: "font-medium text-gray-900" %>
-            </div>
+          <div class="flex items-start">
+            <% if devise_mapping.rememberable? %>
+              <div class="flex items-center h-5">
+                <%= f.check_box :remember_me, class: "w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300" %>
+              </div>
+              <div class="ml-3 text-sm">
+                <%= f.label "Se souvenir de moi", class: "font-medium text-gray-900" %>
+              </div>
+            <% end %>
+          </div>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Mot de passe oublié ?", new_password_path(resource_name), class: "ml-auto text-sm text-blue-700 hover:underline" %>
           <% end %>
         </div>
-        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-          <%= link_to "Mot de passe oublié ?", new_password_path(resource_name), class: "ml-auto text-sm text-blue-700 hover:underline" %>
-        <% end %>
-      </div>
-      <%= f.button "Accéder à mon dashboard", class: "w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
-      <div class="text-sm font-medium text-gray-500">
-        Pas encore inscrit ? 
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <%= link_to "Créer un compte", new_registration_path(resource_name), class: "text-blue-700 hover:underline" %>
-        <% end %>
-      </div>
-    <% end %>
+        <%= f.button "Accéder à mon dashboard", class: "w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
+        <div class="text-sm font-medium text-gray-500">
+          Pas encore inscrit ? 
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Créer un compte", new_registration_path(resource_name), class: "text-blue-700 hover:underline" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </section>
