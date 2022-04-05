@@ -1,5 +1,5 @@
-<section class="bg-white max-w-lg mx-auto px-8 md:p-12 my-20">
-  <div class="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
+<section class="bg-white max-w-lg mx-auto my-20">
+  <div class="p-4 w-100 bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "space-y-6", method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <h5 class="text-3xl font-medium text-gray-900">Mot de passe oublié ?</h5>
