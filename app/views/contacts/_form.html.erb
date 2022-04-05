@@ -1,37 +1,63 @@
-<%= form_with(model: contact) do |form| %>
-  <% if contact.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-      <ul>
-        <% contact.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="bg-white text-gray-500 rounded-3xl shadow-md w-full overflow-hidden" style="max-width:1000px">
+  <div class="md:flex w-full">
+    <div class="hidden md:block w-1/2 max-h-0">
+      <%= image_tag("contacts/contact_new.jpg", class: "w-full h-100", alt: "contact-new") %>
     </div>
-  <% end %>
-  <div class="relative">
-    <%= form.label :first_name, class: "font-medium text-gray-900" %>
-    <%= form.text_field :first_name, autocomplete: "given-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre prénom" %>
+    <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+      <div class="mb-5">
+        <h5 class="text-3xl font-medium text-gray-900">
+          Nous contacter
+        </h5>
+      </div>
+      <%= form_with(model: contact) do |form| %>
+        <% if contact.errors.any? %>
+          <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+            <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+            <ul>
+              <% contact.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div>
+          <div class="flex -mx-3">
+            <div class="w-1/2 px-3 mb-5">
+              <%= form.label :first_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= form.text_field :first_name, autocomplete: "given-name", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Jean" %>
+            </div>
+            <div class="w-1/2 px-3 mb-5">
+              <%= form.label :last_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= form.text_field :last_name, autocomplete: "family-name", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Dupont" %>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+              <%= form.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= form.text_field :email, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "contact@email.fr" %>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+              <%= form.label :phone, class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= form.text_field :phone, autocomplete: "tel", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "+33 6 95 40 95 69" %>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+              <%= form.fields_for :company do |company_builder| %>
+                <%= company_builder.label :company, class: "block mb-2 text-sm font-medium text-gray-900" %>
+                <%= company_builder.text_field :name, autocomplete: "organization", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Hôpital Ma Santé" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="flex -mx-3">
+            <div class="w-full px-3 mb-5">
+              <%= form.submit "Être contacté", class: "w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="relative">
-    <%= form.label :last_name, class: "font-medium text-gray-900" %>
-    <%= form.text_field :last_name, autocomplete: "family-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre nom" %>
-  </div>
-  <div class="relative">
-    <%= form.label :email, class: "font-medium text-gray-900" %>
-    <%= form.text_field :email, autocomplete: "email", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre email" %>
-  </div>
-  <div class="relative">
-    <%= form.label :phone, class: "font-medium text-gray-900" %>
-    <%= form.text_field :phone, autocomplete: "tel", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre téléphone" %>
-  </div>
-  <div class="relative">
-    <%= form.fields_for :company do |company_builder| %>
-      <%= company_builder.label :company, class: "font-medium text-gray-900" %>
-      <%= company_builder.text_field :name, autocomplete: "organization", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Votre entreprise" %>
-    <% end %>
-  </div>
-  <div class="relative">
-    <%= form.submit class: "w-full px-3 py-4 font-medium text-white bg-blue-600 rounded-lg hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
-  </div>
-<% end %>
+</div>

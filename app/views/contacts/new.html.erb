@@ -1,32 +1,6 @@
-<section class="w-full bg-white">
-  <div class="mx-auto max-w-7xl">
-    <div class="flex flex-col lg:flex-row">
-      <div class="relative w-full bg-cover lg:w-6/12 xl:w-7/12 bg-gradient-to-r from-white via-white to-gray-100">
-        <div class="relative flex flex-col items-center justify-center w-full h-full px-10 my-20 lg:px-16 lg:my-0">
-          <div class="flex flex-col items-start space-y-8 tracking-tight lg:max-w-3xl">
-            <div class="relative">
-              <p class="mb-2 font-medium text-gray-700 uppercase">Work smarter</p>
-              <h2 class="text-5xl font-bold text-gray-900 xl:text-6xl">Features to help you work smarter</h2>
-            </div>
-            <p class="text-2xl text-gray-700">We've created a simple formula to follow in order to gain more out of your business and your application.</p>
-            <a href="#_" class="inline-block px-8 py-5 text-xl font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Get Started Today</a>
-          </div>
-        </div>
-      </div>
-      <div class="w-full bg-white lg:w-6/12 xl:w-5/12">
-        <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
-          <% if notice.present? %>
-            <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-          <% end %>
-          <h4 class="w-full text-3xl font-bold"><%= t('contact.new.title') %></h4>
-          <p class="text-lg text-gray-500">ou, si vous préférez, 
-            <a href="#_" class="text-blue-600 underline">appelez-nous</a>
-          </p>
-          <div class="relative w-full mt-10 space-y-8">
-            <%= render "form", contact: @contact %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="bg-gray-100 flex justify-center items-center flex-grow px-5 py-5">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+  <%= render "form", contact: @contact %>
+</div>
