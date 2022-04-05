@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
-  # Layout
-
-  layout 'contacts'
-
   before_action :set_contact, only: %i[show edit update destroy]
 
   # GET /contacts or /contacts.json

@@ -1,47 +1,57 @@
-<section class="bg-gray-100 py-20">
-  <div class="container max-w-lg mx-auto">
-    <div class="p-4 w-100 bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-6" }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        <h5 class="text-3xl font-medium text-gray-900">Créer un compte</h5>
-        <div>
-          <%= f.label :first_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.text_field :first_name, autocomplete: "given-name", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Jean" %>
+<section class="bg-gray-100 flex justify-center items-center flex-grow px-5 py-5">
+  <div class="bg-white text-gray-500 rounded-3xl shadow-md w-full overflow-hidden" style="max-width:1000px">
+    <div class="md:flex w-full">
+      <div class="hidden md:block w-1/2 max-h-0">
+        <%= image_tag("contacts/contact_new.jpg", class: "w-full h-100", alt: "contact-new") %>
+      </div>
+      <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+        <div class="mb-5">
+          <h5 class="text-3xl font-medium text-gray-900">
+            Nous contacter
+          </h5>
         </div>
-        <div>
-          <%= f.label :last_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.text_field :last_name, autocomplete: "family-name", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Dupont" %>
-        </div>
-        <div>
-          <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "email@smuca.fr" %>
-        </div>
-        <div>
-          <%= f.label :job_title, class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.text_field :job_title, autocomplete: "organization-title", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Médecin généraliste" %>
-        </div>
-        <div>
-          <%= f.label :description, class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.text_area :description, type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Recusandae minima consequatur. Expedita sequi blanditiis. Ut fuga et." %>
-        </div>
-        <div>
-          <%= f.label :phone, class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.telephone_field :phone, autocomplete: "tel", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "+33 6 00 00 00 00" %>
-        </div>
-        <div>
-          <%= f.label 'Mot de passe', class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.password_field :password, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••" %>
-        </div>
-        <div>
-          <%= f.label 'Confirmation du mot de passe', class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••" %>
-        </div>
-        <%= f.button "Créer mon compte", class: "w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
-        <div class="text-sm font-medium text-gray-500">
-          Vous avez déjà un compte ? 
-          <%= link_to "Se connecter", new_user_session_path, class: "text-blue-700 hover:underline" %>
-        </div>
-      <% end %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-6" }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <h5 class="text-3xl font-medium text-gray-900">Créer un compte</h5>
+          <div>
+            <%= f.label :first_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+            <%= f.text_field :first_name, autocomplete: "given-name", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Jean" %>
+          </div>
+          <div>
+            <%= f.label :last_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+            <%= f.text_field :last_name, autocomplete: "family-name", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Dupont" %>
+          </div>
+          <div>
+            <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "email@smuca.fr" %>
+          </div>
+          <div>
+            <%= f.label :job_title, class: "block mb-2 text-sm font-medium text-gray-900" %>
+            <%= f.text_field :job_title, autocomplete: "organization-title", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Médecin généraliste" %>
+          </div>
+          <div>
+            <%= f.label :description, class: "block mb-2 text-sm font-medium text-gray-900" %>
+            <%= f.text_area :description, type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Recusandae minima consequatur. Expedita sequi blanditiis. Ut fuga et." %>
+          </div>
+          <div>
+            <%= f.label :phone, class: "block mb-2 text-sm font-medium text-gray-900" %>
+            <%= f.telephone_field :phone, autocomplete: "tel", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "+33 6 00 00 00 00" %>
+          </div>
+          <div>
+            <%= f.label 'Mot de passe', class: "block mb-2 text-sm font-medium text-gray-900" %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••" %>
+          </div>
+          <div>
+            <%= f.label 'Confirmation du mot de passe', class: "block mb-2 text-sm font-medium text-gray-900" %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••" %>
+          </div>
+          <%= f.button "Créer mon compte", class: "w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
+          <div class="text-sm font-medium text-gray-500">
+            Vous avez déjà un compte ? 
+            <%= link_to "Se connecter", new_user_session_path, class: "text-blue-700 hover:underline" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </section>
