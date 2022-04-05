@@ -1,34 +1,53 @@
-<section class="bg-white max-w-lg mx-auto px-8 md:p-12 my-20 rounded-lg shadow-2xl">
-  <div class="mt-3">
-    <h4 class="w-full text-3xl font-bold">Modifier mon compte</h4>
-    <div class="relative w-full mt-10 space-y-8">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "given-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" %>
-        <%= f.text_field :last_name, autofocus: true, autocomplete: "family-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" %>
+<section class="bg-white max-w-lg mx-auto my-20">
+  <div class="p-4 w-100 bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-6" }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <h5 class="text-3xl font-medium text-gray-900">Modifier mon compte</h5>
+      <div>
+        <%= f.label :first_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.text_field :first_name, autocomplete: "given-name", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Jean" %>
+      </div>
+      <div>
+        <%= f.label :last_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.text_field :last_name, autocomplete: "family-name", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Dupont" %>
+      </div>
+      <div>
+        <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "email@smuca.fr" %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-        <%= f.text_field :job_title, autofocus: true, autocomplete: "organization-title", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" %>
-        <%= f.text_area :description, autofocus: true, autocomplete: "family-name", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" %>
-        <%= f.text_field :phone, autofocus: true, autocomplete: "tel", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" %>
-        <div class="field">
-          <%= f.password_field :password, autocomplete: "new-password", class: "block w-full px-4 py-3 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Nouveau mot de passe" %>
-          <p class="mt-2 mb-4 text-sm text-gray-500 dark:text-gray-400">Laissez ce champ vide si vous ne voulez pas le changer</p>
-        </div>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Confirmation du mot de passe" %>
-        <div class="field">
-          <%= f.password_field :current_password, autocomplete: "current-password", class: "block w-full px-4 py-3 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none", placeholder: "Mot de passe actuel" %>
-          <p class="mt-2 mb-4 text-sm text-gray-500 dark:text-gray-400">Nous avons besoin de votre mot de passe actuel pour confirmer vos changements</p>
-        </div>
-        <div class="actions">
-          <%= f.submit "Mettre à jour", class: "w-full px-3 py-4 font-medium text-white bg-blue-600 rounded-lg hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
-        </div>
-      <% end %>
-      <p class="w-full mt-4 text-sm text-center text-gray-500">Supprimer 
-        <%= link_to "mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "text-blue-500 underline" %>
-      </p>
-    </div>
+      </div>
+      <div>
+        <%= f.label :job_title, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.text_field :job_title, autocomplete: "organization-title", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Médecin généraliste" %>
+      </div>
+      <div>
+        <%= f.label :description, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.text_area :description, type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Recusandae minima consequatur. Expedita sequi blanditiis. Ut fuga et." %>
+      </div>
+      <div>
+        <%= f.label :phone, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.telephone_field :phone, autocomplete: "tel", type: "text", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "+33 6 00 00 00 00" %>
+      </div>
+      <div>
+        <%= f.label 'Mot de passe', class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "••••••••" %>
+        <p class="mt-2 mb-4 text-sm text-gray-500 dark:text-gray-400">Laissez ce champ vide si vous ne voulez pas le changer</p>
+      </div>
+      <div>
+        <%= f.label 'Confirmation du mot de passe', class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Confirmation du mot de passe" %>
+      </div>
+      <div>
+        <%= f.label 'Mot de passe actuel', class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "Confirmation du mot de passe" %>
+        <p class="mt-2 mb-4 text-sm text-gray-500 dark:text-gray-400">Nous avons besoin de votre mot de passe actuel pour confirmer vos changements</p>
+      </div>
+      <%= f.button "Modifier mon compte", class: "w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
+      <div class="text-sm font-medium text-gray-500">
+        <%= link_to "Supprimer mon compte", new_user_session_path, class: "text-red-700 hover:underline" %>
+      </div>
+    <% end %>
   </div>
 </section>
