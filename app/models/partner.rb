@@ -28,7 +28,7 @@ class Partner < ApplicationRecord
 
     logo.attach(
       io: File.open(
-        Rails.root.join('app', 'assets', 'images', 'users', 'default_logo.png')
+        Rails.root.join('app', 'assets', 'images', 'partners', 'default_logo.png')
       ),
 
       filename: 'default_logo.png',
