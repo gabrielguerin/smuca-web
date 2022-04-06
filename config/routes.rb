@@ -40,12 +40,4 @@ Rails.application.routes.draw do
   # Contacts routes
 
   resources :contacts, only: %i[new create]
-
-  # Companies routes
-
-  resources :companies
-
-  # Partners routes
-
-  resources :partners
 end
