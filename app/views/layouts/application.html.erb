@@ -11,8 +11,10 @@
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
   </head>
   <body>
-    <main>
+    <header class="sticky top-0 z-50">
       <%= render 'layouts/navbar' %>
+    </header>
+    <main class="relative">
       <%= render 'layouts/flashes' %>
       <%= yield %>
       <%= render 'layouts/footer' %>
