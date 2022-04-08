@@ -1,4 +1,32 @@
 <% content_for :page_title, 'SMUCA — Contact' %>
-<section class="bg-gray-100 flex justify-center items-center flex-grow px-5 py-20">
-  <%= render "form", contact: @contact %>
-</section>
+<div class="min-h-screen overflow-hidden bg-gray-100">
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="flex flex-col items-center justify-between xl:flex-row">
+      <div class="w-full max-w-xl mb-12 xl:pr-16 xl:mb-0 xl:w-7/12">
+        <h2 class="mt-4 mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font">Nous contacter</h2>
+        <div class="my-4 lg:w-1/2 lg:mt-0">
+          <h2 class="text-xs font-semibold tracking-widest text-gray-900 uppercase title-font">Email</h2>
+          <a class="leading-relaxed text-indigo-500">cpotin@smuca.fr</a>
+          <h2 class="mt-4 text-xs font-semibold tracking-widest text-gray-900 uppercase title-font">Téléphone</h2>
+          <p class="leading-relaxed">+33 6 95 40 95 69</p>
+        </div>
+        <div class="flex flex-wrap items-center w-full mt-auto mb-4 border-b-2 border-gray-200">
+        </div>
+        <a class="inline-flex items-center">
+          <img alt="blog" src="https://dummyimage.com/104x104" class="flex-shrink-0 object-cover object-center w-12 h-12 rounded-full">
+          <span class="flex flex-col flex-grow pl-4">
+            <span class="font-medium text-gray-900 title-font">Corinne Potin</span>
+            <span class="text-gray-400 text-xs tracking-widest mt-0.5 uppercase">Assistante de direction</span>
+          </span>
+        </a>
+      </div>
+      <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
+        <div class="relative">
+          <div class="relative bg-white rounded shadow-2xl p-7 sm:p-10">
+            <%= render "form", contact: @contact %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

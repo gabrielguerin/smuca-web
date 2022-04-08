@@ -1,63 +1,54 @@
-<div class="w-full overflow-hidden text-gray-500 bg-white shadow-md rounded-3xl" style="max-width:1000px">
-  <div class="w-full md:flex">
-    <div class="hidden w-1/2 md:block max-h-0">
-      <%= image_tag("devise/sessions/new.jpg", class: "w-full h-100", alt: "contact-new") %>
-    </div>
-    <div class="w-full px-5 py-10 md:w-1/2 md:px-10">
-      <div class="mb-5">
-        <h5 class="text-3xl font-medium text-gray-900">
-          Nous contacter
-        </h5>
-      </div>
-      <%= form_with(model: contact) do |form| %>
-        <% if contact.errors.any? %>
-          <div id="error_explanation" class="px-3 py-2 mt-3 font-medium text-red-500 rounded-lg bg-red-50">
-            <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-            <ul>
-              <% contact.errors.each do |error| %>
-                <li><%= error.full_message %></li>
-              <% end %>
-            </ul>
-          </div>
+<div class="mb-5">
+  <h5 class="text-3xl font-medium text-gray-900">
+    Ou être contacté
+  </h5>
+</div>
+<%= form_with(model: contact) do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation" class="px-3 py-2 mt-3 font-medium text-red-500 rounded-lg bg-red-50">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+      <ul>
+        <% contact.errors.each do |error| %>
+          <li><%= error.full_message %></li>
         <% end %>
-        <div>
-          <div class="flex -mx-3">
-            <div class="w-1/2 px-3 mb-5">
-              <%= form.label :first_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= form.text_field :first_name, autocomplete: "given-name", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "Jean" %>
-            </div>
-            <div class="w-1/2 px-3 mb-5">
-              <%= form.label :last_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= form.text_field :last_name, autocomplete: "family-name", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "Dupont" %>
-            </div>
-          </div>
-          <div class="flex -mx-3">
-            <div class="w-full px-3 mb-5">
-              <%= form.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= form.text_field :email, autocomplete: "email", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "contact@email.fr" %>
-            </div>
-          </div>
-          <div class="flex -mx-3">
-            <div class="w-full px-3 mb-5">
-              <%= form.label :phone, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= form.text_field :phone, autocomplete: "tel", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "+33 6 95 40 95 69" %>
-            </div>
-          </div>
-          <div class="flex -mx-3">
-            <div class="w-full px-3 mb-5">
-              <%= form.fields_for :company do |company_builder| %>
-                <%= company_builder.label :company, class: "block mb-2 text-sm font-medium text-gray-900" %>
-                <%= company_builder.text_field :name, autocomplete: "organization", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "Hôpital Ma Santé" %>
-              <% end %>
-            </div>
-          </div>
-          <div class="flex -mx-3">
-            <div class="w-full px-3 my-3">
-              <%= form.button "Être contacté", class: "w-full inline-block px-7 py-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out", style: "background-color: rgba(37, 99, 235, var(--tw-bg-opacity))" %>
-            <% end %>
-          </div>
-        </div>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <div class="flex -mx-3">
+      <div class="w-1/2 px-3 mb-5">
+        <%= form.label :first_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= form.text_field :first_name, autocomplete: "given-name", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "Jean" %>
       </div>
+      <div class="w-1/2 px-3 mb-5">
+        <%= form.label :last_name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= form.text_field :last_name, autocomplete: "family-name", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "Dupont" %>
+      </div>
+    </div>
+    <div class="flex -mx-3">
+      <div class="w-full px-3 mb-5">
+        <%= form.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= form.text_field :email, autocomplete: "email", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "contact@email.fr" %>
+      </div>
+    </div>
+    <div class="flex -mx-3">
+      <div class="w-full px-3 mb-5">
+        <%= form.label :phone, class: "block mb-2 text-sm font-medium text-gray-900" %>
+        <%= form.text_field :phone, autocomplete: "tel", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "+33 6 95 40 95 69" %>
+      </div>
+    </div>
+    <div class="flex -mx-3">
+      <div class="w-full px-3 mb-5">
+        <%= form.fields_for :company do |company_builder| %>
+          <%= company_builder.label :company, class: "block mb-2 text-sm font-medium text-gray-900" %>
+          <%= company_builder.text_field :name, autocomplete: "organization", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none", placeholder: "Hôpital Ma Santé" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="flex -mx-3">
+      <div class="w-full px-3 my-3">
+        <%= form.button "Être contacté", class: "w-full inline-block px-7 py-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out", style: "background-color: rgba(37, 99, 235, var(--tw-bg-opacity))" %>
+      <% end %>
     </div>
   </div>
 </div>
