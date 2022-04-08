@@ -1,6 +1,7 @@
-<section class="bg-gray-100 py-20">
-  <div class="container max-w-lg mx-auto">  
-    <div class="p-4 w-100 bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8">
+<% content_for :page_title, 'SMUCA — Mot de passe oublié' %>
+<section class="py-20 bg-gray-100">
+  <div class="container max-w-lg mx-auto">
+    <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-md w-100 sm:p-6 lg:p-8">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "space-y-6", method: :post }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <h5 class="text-3xl font-medium text-gray-900">Mot de passe oublié ?</h5>
@@ -8,7 +9,7 @@
           <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", placeholder: "email@smuca.fr" %>
         </div>
-        <%= f.button "Réinitialiser mon mot de passe", class: "w-full text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
+        <%= f.button "Réinitialiser mon mot de passe", class: "w-full inline-block px-7 py-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out", style: "background-color: rgba(37, 99, 235, var(--tw-bg-opacity))" %>
       <% end %>
     </div>
   </div>
