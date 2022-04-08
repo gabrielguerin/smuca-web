@@ -1,15 +1,18 @@
 <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-8">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Nos partenaires nous font confiance</h1>
-    </div>
-    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 items-center">
-      <% @partners.first(3).each do |partner| %>
+  <div class="container px-5 py-24 mx-auto text-center">
+    <h1 class="mb-12 text-2xl font-medium text-gray-900 sm:text-3xl title-font">
+      Nos partenaires nous font confiance
+    </h1>
+    <div class="grid grid-cols-3 row-gap-8 md:grid-cols-3">
+      <% @partners.each do |partner| %>
         <%= render 'partners/partner_card', partner: partner %>
       <% end %>
     </div>
-    <div class="flex flex-col text-center w-full mt-10">
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-lg">Nous travaillons sur différents sites. Toujours en contrat avec la société et de façon durable.</p>
+    <div class="flex flex-col w-full mt-10 text-center">
+      <p class="mx-auto text-base text-lg leading-relaxed lg:w-2/3">Nous travaillons sur différents sites.
+        <br>
+        Toujours en contrat avec la société et de façon durable.
+      </p>
     </div>
   </div>
 </section>
