@@ -1,13 +1,19 @@
-<div class="hero min-h-screen bg-center" style="background-image: url(<%= asset_path 'pages/01_content_image.jpg' %>);">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md">
-      <%= image_tag("logo/logo-white.png", class: "xl:w-1/4 lg:w-1/3 md:w-1/2 w-2/3 block mx-auto m-5") %>
-      <h1 class="mb-5 text-5xl font-bold uppercase">SMUCA</h1>
-      <h2 class="text-1xl leading-10 text-left md:text-center sm:leading-none md:text-2xl lg:text-3xl uppercase pb-10">
-        Selarl de médecins urgentistes
-      </h2>
-      <button class="btn btn-primary text-white">Qui sommes-nous ?</button>
+<section class="relative mb-10">
+  <%= image_tag("pages/hero.jpg", class: "absolute inset-0 object-cover w-full h-full") %>
+  <div class="relative flex items-center justify-center min-h-screen bg-gray-900 bg-opacity-75">
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="flex flex-col items-center justify-between text-center xl:flex-row">
+        <div class="w-full max-w-xl mb-12">
+          <%= image_tag("logo/logo-white.png", class: "xl:w-1/4 lg:w-1/3 md:w-1/2 w-2/3 block mx-auto m-5") %>
+          <h2 class="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+            SMUCA
+          </h2>
+          <p class="max-w-xl pb-10 mb-4 text-base text-gray-400 md:text-lg">
+            Selarl de médecins urgentistes
+          </p>
+          <%= link_to "Qui sommes-nous ?", "#team", class: "inline-block px-7 py-3 bg-blue-600 text-white font-medium leading-snug rounded hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out uppercase" %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
