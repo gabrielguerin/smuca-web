@@ -89,19 +89,19 @@ clinique_anne_artois = Partner.new(
 )
 
 clinique_anne_artois.logo.attach(
-  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'clinique_anne_artois_logo.png')),
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'hpl.png')),
 
   filename: 'clinique_anne_artois_logo.png',
 
   content_type: 'image/png'
 )
 
-clinique_saint_amé = Partner.new(
+clinique_saint_ame = Partner.new(
   name: 'Clinique Saint-Amé'
 )
 
-clinique_saint_amé.logo.attach(
-  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'clinique_saint-amé_logo.png')),
+clinique_saint_ame.logo.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'ramsay_sante.png')),
 
   filename: 'clinique_saint-amé_logo.png',
 
@@ -113,11 +113,11 @@ clinique_2_caps = Partner.new(
 )
 
 clinique_2_caps.logo.attach(
-  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'clinique_2_caps_logo.png')),
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'hpl.png')),
 
   filename: 'clinique_2_caps_logo.png',
 
   content_type: 'image/png'
 )
 
-[clinique_anne_artois, clinique_saint_amé, clinique_2_caps].each(&:save!)
+[clinique_anne_artois, clinique_saint_ame, clinique_2_caps].each(&:save!)

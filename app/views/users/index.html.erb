@@ -1,17 +1,11 @@
-<!-- Section 1 -->
-<section class="relative py-20 overflow-hidden bg-white">
-  <span class="absolute top-0 right-0 flex flex-col items-end mt-0 -mr-16 opacity-60">
-    <span class="container hidden w-screen h-32 max-w-xs mt-20 transform rounded-full rounded-r-none md:block md:max-w-xs lg:max-w-lg 2xl:max-w-3xl bg-blue-50"></span>
-  </span>
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-  <span class="absolute bottom-0 left-0"> </span>
-  <div class="relative px-16 mx-auto max-w-7xl">
+<% content_for :page_title, 'SMUCA — Notre équipe' %>
+<section class="bg-gray-100">
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
     <p class="font-medium tracking-wide text-blue-500 uppercase"><%= t('user.index.title') %></p>
-    <h2 class="relative max-w-lg mt-5 mb-10 text-4xl font-semibold leading-tight lg:text-5xl">An incredible team of <br>
-      amazing individuals</h2>
-    <div class="grid w-full grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-4">
+    <h2 class="relative max-w-3xl mt-5 mb-10 text-4xl font-semibold leading-tight lg:text-5xl">
+      Toujours prêts à intervenir.
+    </h2>
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <%= render @users %>
     </div>
   </div>

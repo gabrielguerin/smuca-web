@@ -1,5 +1,7 @@
 <% if notice.present? %>
-  <div class="text-center my-5">
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  </div>
+  <section class="bg-gray-100 flex justify-center items-center flex-grow px-5 py-5">
+    <p class="py-2 px-3 bg-green-50 text-green-500 font-medium rounded-lg inline-block" id="notice">
+      <%= notice %>
+    </p>
+  </section>
 <% end %>

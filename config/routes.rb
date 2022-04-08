@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # Admin routes
+
   namespace :admin do
     resources :users
 
@@ -12,8 +14,6 @@ Rails.application.routes.draw do
 
     root to: 'contacts#index'
   end
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Error pages
 
@@ -35,17 +35,9 @@ Rails.application.routes.draw do
 
   # Users routes
 
-  resources :users, only: %i[index show]
+  resources :users, only: %i[index]
 
   # Contacts routes
 
-  resources :contacts
-
-  # Companies routes
-
-  resources :companies
-
-  # Partners routes
-
-  resources :partners
+  resources :contacts, only: %i[new create]
 end
