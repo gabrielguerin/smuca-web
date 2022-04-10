@@ -1,0 +1,15 @@
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+/home/gabriel/.rbenv/versions/2.7.5/bin/ruby -I /home/gabriel/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20220410-14509-7oorda.rb extconf.rb
+creating Makefile
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20220410-14509-d6p6u4
