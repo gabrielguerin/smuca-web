@@ -126,4 +126,4 @@ gem 'kaminari'
 
 # Official AWS SDK for Ruby
 
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
