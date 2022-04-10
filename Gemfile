@@ -123,3 +123,7 @@ gem 'administrate'
 #  Scope & Engine based, clean, powerful, customizable and sophisticated paginator
 
 gem 'kaminari'
+
+# Official AWS SDK for Ruby
+
+gem 'aws-sdk-s3', require: false
