@@ -1,0 +1,16 @@
+<% if valid_action?(:edit, collection_presenter.resource_name) %>
+  <td><%= link_to(
+    t("administrate.actions.edit"),
+    [:edit, namespace, resource],
+    class: "btn btn-outline btn-primary btn-sm",
+  ) if show_action?(:edit, resource) %></td>
+<% end %>
+<% if valid_action?(:destroy, collection_presenter.resource_name) %>
+  <td><%= link_to(
+    t("administrate.actions.destroy"),
+    [namespace, resource],
+    class: "btn btn-outline btn-error btn-sm",
+    method: :delete,
+    data: { confirm: t("administrate.actions.confirm") }
+  ) if show_action?(:destroy, resource) %></td>
+<% end %>

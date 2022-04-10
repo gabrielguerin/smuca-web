@@ -1,0 +1,20 @@
+<%#
+# String Form Partial
+
+This partial renders an input element for a string attribute.
+By default, the input is a text field.
+
+## Local variables:
+
+- `f`:
+  A Rails form generator, used to help create the appropriate input fields.
+- `field`:
+  An instance of [Administrate::Field::String][1].
+  A wrapper around the String pulled from the database.
+
+[1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/String
+%>
+<div class="form-control w-full max-w-xs">
+  <%= f.label field.attribute, class: "font-medium text-gray-900" %>
+  <%= f.text_field field.attribute, class: "input input-bordered w-full max-w-xs" %>
+</div>

@@ -1,0 +1,22 @@
+fr:
+  user:
+    new:
+      title: 'Créer un compte'
+    index:
+      title: 'Notre équipe'
+  helpers:
+    label:
+      user:
+        first_name: 'Prénom'
+        last_name: 'Nom'
+        email: 'Email'
+        phone: 'Téléphone'
+        job_title: 'Profession'
+        description: 'Description'
+    submit:
+      # Model-specific submit button
+      user:
+        new: 'Nouveau compte'
+        show: 'Voir le profil'
+        create: 'Nous contacter'
+        edit: "Modifier l'utilisateur"
