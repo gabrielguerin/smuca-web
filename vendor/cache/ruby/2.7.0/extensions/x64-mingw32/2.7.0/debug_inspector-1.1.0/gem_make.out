@@ -1,0 +1,16 @@
+current directory: C:/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/2.7.0 -r ./siteconf20220410-22460-128rkqd.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: C:/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR="
+generating debug_inspector-x64-mingw32.def
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: C:/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20220410-22460-7tmqtj
