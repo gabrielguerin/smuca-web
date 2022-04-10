@@ -1,0 +1,16 @@
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+/home/gabriel/.rbenv/versions/2.7.5/bin/ruby -I /home/gabriel/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20220410-14509-1lnm1bc.rb extconf.rb
+creating Makefile
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" clean
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR="
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20220410-14509-v3gxbf/debug

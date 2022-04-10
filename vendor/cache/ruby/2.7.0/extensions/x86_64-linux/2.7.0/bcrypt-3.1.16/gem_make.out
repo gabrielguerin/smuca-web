@@ -1,0 +1,22 @@
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
+/home/gabriel/.rbenv/versions/2.7.5/bin/ruby -I /home/gabriel/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20220410-14509-1t2j77g.rb extconf.rb
+creating Makefile
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
+make "DESTDIR=" clean
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+gcc  -D__SKIP_GNU -I/home/gabriel/.rbenv/versions/2.7.5/include     -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+wrapper.c:182:60: warning: ‘struct crypt_data’ declared inside parameter list will not be visible outside of this definition or declaration
+  182 | char *crypt_r(const char *key, const char *setting, struct crypt_data *data)
+      |                                                            ^~~~~~~~~~
+linking shared-object bcrypt_ext.so
+
+current directory: /mnt/c/Users/Gabriel/Documents/smuca/smuca-web/vendor/cache/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20220410-14509-1lqrcrb
