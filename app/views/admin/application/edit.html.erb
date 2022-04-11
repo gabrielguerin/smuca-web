@@ -14,14 +14,12 @@ It displays a header, and renders the `_form` partial to do the heavy lifting.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
-
 <% content_for(:title) { t("administrate.actions.edit_resource", name: page.page_title) } %>
-
+<%= render("header", resources: false, search_term: false, page: page, show_search_bar: false) %>
 <header class="main-content__header" role="banner">
   <h1 class="main-content__page-title">
     <%= content_for(:title) %>
   </h1>
-
   <div>
     <%= link_to(
       t("administrate.actions.show_resource", name: page.page_title),
@@ -30,7 +28,6 @@ It displays a header, and renders the `_form` partial to do the heavy lifting.
     ) if valid_action?(:show) && show_action?(:show, page.resource) %>
   </div>
 </header>
-
 <section class="main-content__body">
   <%= render "form", page: page %>
 </section>
