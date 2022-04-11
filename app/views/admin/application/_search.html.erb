@@ -1,12 +1,8 @@
-<form role="search">
-  <label class="sr-only" for="search">
-    <%= t("administrate.search.label", resource: resource_name) %>
-  </label>
-  <input class="input input-bordered w-full max-w-xs"
-         id="search"
-         type="search"
-         name="search"
-         placeholder="<%= t("administrate.search.label",
-                            resource: resource_name) %>"
-         value="<%= search_term %>">
+<form class="flex-row flex-wrap items-center hidden mr-3 md:flex lg:ml-auto" role="search">
+  <div class="relative flex flex-wrap items-stretch w-full">
+    <label class="sr-only" for="search">
+      <%= t("administrate.search.label", resource: resource_name) %>
+    </label>
+    <input class="block w-full px-4 py-2 m-0 text-base font-normal text-gray-700 transition ease-in-out bg-white border border-gray-300 border-solid rounded form-control bg-clip-padding focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="search" type="search" name="search" placeholder="<%= t("administrate.search.label", resource: resource_name) %>" value="<%= search_term %>">
+  </div>
 </form>
