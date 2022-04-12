@@ -3,7 +3,7 @@
 <% end %>
 <nav class="absolute top-0 left-0 z-10 flex items-center w-full pt-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start">
   <div class="flex flex-wrap items-center justify-between w-full px-4 mx-autp md:flex-nowrap md:px-10">
-    <%= link_to 'Dashboard', admin_contacts_path, class: "self-center text-xl font-semibold uppercase whitespace-nowrap hover:text-gray-700" %>
+    <%= link_to 'Dashboard', admin_contacts_path, class: "self-center text-xl font-semibold uppercase whitespace-nowrap text-white hover:text-gray-100" %>
     <% if show_search_bar %>
       <%= render("search", search_term: search_term, resource_name: display_resource_name(page.resource_name)) %>
     <% end %>
@@ -30,7 +30,15 @@
     </div>
   </div>
 </nav>
-<div class="relative pt-12 pb-32 bg-gray-200 md:pt-20">
+<div class="relative pt-12 pb-32 bg-blue-600 md:pt-32">
   <div class="w-full px-4 mx-auto md:px-10">
+    <div>
+      <!-- Card stats -->
+      <div class="flex flex-wrap">
+        <% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %>
+          <%= render "card_stats", resource: resource -%>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
