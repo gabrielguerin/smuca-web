@@ -2,14 +2,14 @@
   <td><%= link_to(
     t("administrate.actions.edit"),
     [:edit, namespace, resource],
-    class: "btn btn-outline btn-primary btn-sm",
+    class: "font-medium text-blue-600 hover:text-blue-700 hover:underline",
   ) if show_action?(:edit, resource) %></td>
 <% end %>
 <% if valid_action?(:destroy, collection_presenter.resource_name) %>
   <td><%= link_to(
     t("administrate.actions.destroy"),
     [namespace, resource],
-    class: "btn btn-outline btn-error btn-sm",
+    class: "font-medium text-red-600 hover:text-red-700 hover:underline",
     method: :delete,
     data: { confirm: t("administrate.actions.confirm") }
   ) if show_action?(:destroy, resource) %></td>

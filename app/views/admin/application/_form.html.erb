@@ -13,7 +13,6 @@ and renders all form fields for a resource's editable attributes.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
-
 <%= form_for([namespace, page.resource], html: { class: "form" }) do |f| %>
   <% if page.resource.errors.any? %>
     <div id="error_explanation">
@@ -24,7 +23,6 @@ and renders all form fields for a resource's editable attributes.
           resource_name: display_resource_name(page.resource_name, singular: true)
         ) %>
       </h2>
-
       <ul>
         <% page.resource.errors.full_messages.each do |message| %>
           <li class="flash-error"><%= message %></li>
@@ -32,14 +30,18 @@ and renders all form fields for a resource's editable attributes.
       </ul>
     </div>
   <% end %>
-
-  <% page.attributes(controller.action_name).each do |attribute| -%>
-    <div class="field-unit field-unit--<%= attribute.html_class %> field-unit--<%= requireness(attribute) %>">
-      <%= render_field attribute, f: f %>
+  <div>
+    <% page.attributes(controller.action_name).each do |attribute| -%>
+      <div class="flex -mx-3">
+        <div class="w-full px-3 mb-5">
+          <%= render_field attribute, f: f %>
+        </div>
+      </div>
+    <% end -%>
+    <div class="flex -mx-3">
+      <div class="w-full px-3 mb-5">
+        <%= f.button (t("administrate.actions.edit_resource", name: page.page_title)), class: "w-full inline-block px-7 py-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out", style: "background-color: rgba(37, 99, 235, var(--tw-bg-opacity))" %>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="form-actions">
-    <%= f.submit %>
   </div>
 <% end %>
