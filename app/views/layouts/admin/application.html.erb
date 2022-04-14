@@ -13,33 +13,32 @@ By default, it renders:
 %>
 <!DOCTYPE html>
 <html data-theme="corporate" lang="<%= I18n.locale %>">
-<head>
-  <meta charset="utf-8">
-  <meta name="ROBOTS" content="NOODP">
-  <meta name="viewport" content="initial-scale=1">
-  <title>
-    <%= content_for(:title) %> - <%= application_title %>
-  </title>
-  <%= favicon_link_tag asset_path('logo/favicon_io_white/favicon.ico') %>
-  <%= render "stylesheet" %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag if defined?(csp_meta_tag) %>
-  <%= stylesheet_link_tag 'wind', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.9.0/dist/full.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-  <%= render "icons" %>
-  <div id="root">
-    <div class="relative md:ml-64">
-      <%= render "navigation" -%>
+  <head>
+    <meta charset="utf-8">
+    <meta name="ROBOTS" content="NOODP">
+    <meta name="viewport" content="initial-scale=1">
+    <title>
+      <%= content_for(:title) %> - <%= application_title %>
+    </title>
+    <%= favicon_link_tag asset_path('logo/favicon_io_white/favicon.ico') %>
+    <%= render "stylesheet" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag if defined?(csp_meta_tag) %>
+    <%= stylesheet_link_tag 'wind', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render "icons" %>
+    <div id="root">
+      <div class="relative md:ml-64">
+        <%= render "navigation" -%>
+      </div>
+      <div class="relative md:ml-64">
+        <%= yield %>
+      </div>
     </div>
-    <div class="relative md:ml-64">
-      <%= yield %>
-    </div>
-  </div>
-  <%= render "javascript" %>
-  <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-  <script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
-</body>
+    <%= render "javascript" %>
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+    <script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
+  </body>
 </html>
