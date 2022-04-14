@@ -24,8 +24,8 @@ By default, it renders:
     <%= render "stylesheet" %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag if defined?(csp_meta_tag) %>
-    <%= stylesheet_link_tag 'wind', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body>
     <%= render "icons" %>
@@ -39,6 +39,5 @@ By default, it renders:
     </div>
     <%= render "javascript" %>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-    <script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
   </body>
 </html>
