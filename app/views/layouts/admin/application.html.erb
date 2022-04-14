@@ -20,21 +20,25 @@ By default, it renders:
   <title>
     <%= content_for(:title) %> - <%= application_title %>
   </title>
+  <%= favicon_link_tag asset_path('logo/favicon_io_white/favicon.ico') %>
   <%= render "stylesheet" %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag if defined?(csp_meta_tag) %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.9.0/dist/full.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <%= render "icons" %>
-  <div class="app-container">
-    <%= render "navigation" -%>
-    <main class="main-content" role="main">
-      <%= render "flashes" -%>
+  <div id="root">
+    <div class="relative md:ml-64">
+      <%= render "navigation" -%>
+    </div>
+    <div class="relative md:ml-64">
       <%= yield %>
-    </main>
+    </div>
   </div>
   <%= render "javascript" %>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 </body>
 </html>

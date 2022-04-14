@@ -16,7 +16,7 @@ require 'faker'
 
 # Seed from a CSV file
 
-# require 'csv'
+require 'csv'
 
 # Delete everything
 
@@ -34,27 +34,35 @@ end
 
 # Create users
 
-20.times do
-  first_name = Faker::Name.unique.first_name
+users_csv = File.read(Rails.root.join('lib', 'seeds', 'users.csv'))
 
-  last_name = Faker::Name.unique.last_name
+users = CSV.parse(users_csv, headers: true, col_sep: ',', encoding: 'utf-8')
 
-  user = User.new(
-    first_name: first_name,
+users.each do |row|
+  user = User.new
 
-    last_name: last_name,
+  user.first_name = row['first_name']
 
-    job_title: Faker::Job.title,
+  user.last_name = row['last_name']
 
-    email: "#{first_name.parameterize(separator: '_')}.#{last_name.parameterize(separator: '_')}@smuca.fr",
+  user.job_title = row['job_title']
 
-    description: Faker::Lorem.paragraph,
+  user.email = row['email']
 
-    phone: Faker::Base.with_locale('fr') { Faker::PhoneNumber.cell_phone_with_country_code },
+  user.description = row['description']
 
-    password: 'password',
+  user.phone = row['phone']
 
-    password_confirmation: 'password'
+  user.password = row['password']
+
+  user.password_confirmation = row['password_confirmation']
+
+  user.avatar.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'users', 'seeds', 'avatars', (row['avatar_filename']).to_s)),
+
+    filename: row['avatar_filename'],
+
+    content_type: row['content_type']
   )
 
   user.save!

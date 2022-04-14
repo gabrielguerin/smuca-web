@@ -15,35 +15,40 @@ as well as a link to its edit page.
 
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Show
 %>
-
 <% content_for(:title) { t("administrate.actions.show_resource", name: page.page_title) } %>
-
-<header class="main-content__header" role="banner">
-  <h1 class="main-content__page-title">
-    <%= content_for(:title) %>
-  </h1>
-
-  <div>
-    <%= link_to(
-      t("administrate.actions.edit_resource", name: page.page_title),
-      [:edit, namespace, page.resource],
-      class: "button",
-    ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
-  </div>
-</header>
-
-<section class="main-content__body">
-  <dl>
-    <% page.attributes.each do |attribute| %>
-      <dt class="attribute-label" id="<%= attribute.name %>">
-      <%= t(
+<%= render("header", resources: false, search_term: false, page: page, show_search_bar: false) %>
+<div class="w-full px-4 mx-auto -m-24 md:px-10">
+  <div class="flex flex-wrap justify-center mt-4">
+    <div class="w-full px-4 mb-12 xl:w-8/12 xl:mb-0">
+      <div class="relative flex flex-col w-full min-w-0 mb-6 break-words bg-white rounded shadow-lg">
+        <div class="px-4 py-3 mb-0 border-0 rounded-t">
+          <div class="flex flex-wrap items-center">
+            <div class="relative flex-1 flex-grow w-full max-w-full px-4">
+              <h3 class="text-base font-semibold text-blueGray-700">
+                <%= page.page_title %>
+              </h3>
+            </div>
+            <div class="relative flex-1 flex-grow w-full max-w-full px-4 text-right">
+              <%= link_to(t("administrate.actions.edit_resource", name: page.page_title), [:edit, namespace, page.resource], class: "inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out hover:text-white", ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+            </div>
+          </div>
+        </div>
+        <div class="block w-full px-10">
+          <section class="main-content__body">
+            <dl>
+              <% page.attributes.each do |attribute| %>
+                <dt class="attribute-label" id="<%= attribute.name %>">
+                  <%= t(
         "helpers.label.#{resource_name}.#{attribute.name}",
         default: page.resource.class.human_attribute_name(attribute.name),
       ) %>
-      </dt>
-
-      <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
+                </dt>
+                <dd class="attribute-data attribute-data--<%=attribute.html_class%>"
           ><%= render_field attribute, page: page %></dd>
-    <% end %>
-  </dl>
-</section>
+              <% end %>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,4 @@
+<% [valid_action?(:edit, collection_presenter.resource_name),
+    valid_action?(:destroy, collection_presenter.resource_name)].count(true).times do %>
+  <th class="px-6 py-3 text-xs font-semibold text-left text-gray-500 uppercase align-middle border border-l-0 border-r-0 border-gray-100 border-solid bg-gray-50 whitespace-nowrap" scope="col"></th>
+<% end %>
