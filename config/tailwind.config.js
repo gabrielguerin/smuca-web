@@ -4,7 +4,8 @@ module.exports = {
   content: [
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*'
+    './app/views/**/*',
+    './node_modules/tw-elements/dist/js/**/*.js'
   ],
   theme: {
     extend: {
