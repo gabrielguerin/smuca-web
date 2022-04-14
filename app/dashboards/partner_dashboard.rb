@@ -57,7 +57,7 @@ class PartnerDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how partners are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(partner)
-  #   "Partner ##{partner.id}"
-  # end
+  def display_resource(partner)
+    partner.name.to_s
+  end
 end
