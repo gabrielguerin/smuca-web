@@ -354,10 +354,10 @@
   dependencies:
     "to-regex-range" "^5.0.1"
 
-"flowbite@^1.4.1":
-  "integrity" "sha512-65QrhBUVa7BHGDLM1t1vySgS8unlxTw8PQfJXraTj5Fez+OE17XOTBuOSVk3DCDjAicWBydD+Gkmz53S/8IJ2A=="
-  "resolved" "https://registry.npmjs.org/flowbite/-/flowbite-1.4.1.tgz"
-  "version" "1.4.1"
+"flowbite@^1.4.2":
+  "integrity" "sha512-5UWilgT6+iuO2OYJzSa2OZHU6YPPWHfc526YV/1lSFlVVAIWQ+V0WuwtE+JIhsUJs928+vevmEOThg6PtIl2Rg=="
+  "resolved" "https://registry.npmjs.org/flowbite/-/flowbite-1.4.2.tgz"
+  "version" "1.4.2"
   dependencies:
     "@popperjs/core" "^2.9.3"
     "mini-svg-data-uri" "^1.4.3"
