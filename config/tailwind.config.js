@@ -5,7 +5,8 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
     './app/views/**/*',
-    './node_modules/tw-elements/dist/js/**/*.js'
+    './node_modules/tw-elements/dist/js/**/*.js',
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     extend: {
