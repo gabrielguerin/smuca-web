@@ -8,7 +8,7 @@
       <% if current_user %>
         <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
           <span class="sr-only">Open user menu</span>
-          <%= image_tag(current_user.avatar, class: "w-8 h-8 rounded-full", alt: "user photo") %>
+          <%= image_tag(current_user.avatar, class: "w-8 h-8 rounded-full object-cover", alt: "user photo") %>
         </button>
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow" id="dropdown" style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(1036.5px, 881.5px, 0px);" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top">
           <div class="px-4 py-3">
