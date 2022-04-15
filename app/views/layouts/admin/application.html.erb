@@ -26,6 +26,7 @@ By default, it renders:
     <%= csp_meta_tag if defined?(csp_meta_tag) %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
   </head>
   <body>
     <%= render "icons" %>
@@ -38,7 +39,6 @@ By default, it renders:
       </div>
     </div>
     <%= render "javascript" %>
-    <script src="./node_modules/tw-elements/dist/js/index.min.js"></script>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
   </body>
 </html>
