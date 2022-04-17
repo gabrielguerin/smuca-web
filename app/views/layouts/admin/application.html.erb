@@ -27,18 +27,17 @@ By default, it renders:
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%# javascript_importmap_tags %>
-  </head>
-  <body>
-    <%= render "icons" %>
-    <div id="root">
-      <div class="relative md:ml-64">
-        <%= render "navigation" -%>
-      </div>
-      <div class="relative md:ml-64">
-        <%= yield %>
-      </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <%= render "icons" %>
+  <div id="root">
+    <%= render "navigation" -%>
+    <div class="relative bg-gray-100 md:ml-64">
+      <%= yield %>
     </div>
-    <%= render "javascript" %>
-    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-  </body>
+  </div>
+  <%= render "javascript" %>
+  <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+</body>
 </html>
