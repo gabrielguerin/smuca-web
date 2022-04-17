@@ -7,6 +7,15 @@
     per_page:      number of items to fetch per page
     remote:        data-remote
 -%>
-<li class="page-item <%= 'active' if page.current? %>">
-  <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: "page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"} %>
+<% if page.current? %>
+  <li class="page-item active">
+    <span class="page-link relative block py-1.5 px-3 rounded border-0 bg-blue-600 outline-none transition-all duration-300 text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md">
+      <%= page %>
+    </span>
+  </li>
+<% else %>
+  <li class="page-item">
+    <%= link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: "page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"} %>
+  </span>
 </li>
+<% end %>
