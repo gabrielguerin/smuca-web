@@ -1,32 +1,55 @@
 <% content_for :page_title, 'SMUCA — Contact' %>
-<div class="min-h-screen overflow-hidden bg-gray-100">
-  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-    <div class="flex flex-col items-center justify-between xl:flex-row">
-      <div class="w-full max-w-xl mb-12 xl:pr-16 xl:mb-0 xl:w-7/12">
-        <h2 class="mt-4 mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font">Nous contacter</h2>
-        <div class="my-4 lg:w-1/2 lg:mt-0">
-          <h2 class="text-xs font-semibold tracking-widest text-gray-900 uppercase title-font">Email</h2>
-          <a class="leading-relaxed text-indigo-500">cpotin@smuca.fr</a>
-          <h2 class="mt-4 text-xs font-semibold tracking-widest text-gray-900 uppercase title-font">Téléphone</h2>
-          <p class="leading-relaxed">+33 6 95 40 95 69</p>
+<!-- Section: Design Block -->
+<section class="pb-32 text-gray-800 bg-gray-100">
+  <div class="relative overflow-hidden bg-no-repeat bg-cover"
+      style="background-position: 50%; background-image: url('https://mdbootstrap.com/img/new/textures/full/284.jpg'); height: 300px;">
+  </div>
+  <div class="container px-4 mx-auto text-gray-800 md:px-12 max-w-5xl">
+    <div class="block px-2 py-10 rounded-lg shadow-lg md:py-12 md:px-6"
+        style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
+      <div class="flex flex-wrap">
+        <div class="w-full px-3 mb-12 grow-0 shrink-0 basis-auto xl:w-8/12 lg:px-6 xl:mb-0">
+          <%= render "form", contact: @contact %>
         </div>
-        <div class="flex flex-wrap items-center w-full mt-auto mb-4 border-b-2 border-gray-200">
-        </div>
-        <a class="inline-flex items-center">
-          <img alt="blog" src="https://dummyimage.com/104x104" class="flex-shrink-0 object-cover object-center w-12 h-12 rounded-full">
-          <span class="flex flex-col flex-grow pl-4">
-            <span class="font-medium text-gray-900 title-font">Corinne Potin</span>
-            <span class="text-gray-400 text-xs tracking-widest mt-0.5 uppercase">Assistante de direction</span>
-          </span>
-        </a>
-      </div>
-      <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
-        <div class="relative">
-          <div class="relative bg-white rounded shadow-2xl p-7 sm:p-10">
-            <%= render "form", contact: @contact %>
+        <div class="flex items-center justify-center w-full grow-0 shrink-0 basis-auto xl:w-4/12">
+          <div class="flex flex-col flex-wrap">
+            <div class="w-full px-3 mb-12 grow-0 shrink-0 basis-auto lg:px-6">
+              <div class="flex items-center">
+                <div class="shrink-0">
+                  <div class="flex items-center justify-center p-4 bg-blue-600 rounded-md shadow-md w-14 h-14">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone-alt" class="w-5 text-white" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path fill="currentColor"
+                          d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-1 font-bold">Téléphone</p>
+                  <p class="text-gray-500">+33 6 00 00 00 00</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-3 mb-12 md:mb-0 grow-0 shrink-0 basis-auto lg:px-6">
+              <div class="flex items-center">
+                <div class="shrink-0">
+                  <div class="flex items-center justify-center p-4 bg-blue-600 rounded-md shadow-md w-14 h-14">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope"
+                        class="w-5 text-white" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                      <path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="ml-6 grow">
+                  <p class="mb-1 font-bold">Email</p>
+                  <p class="text-gray-500">cpotin@smuca.fr</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+<!-- Section: Design Block -->
