@@ -77,7 +77,7 @@ to display a collection of resources in an HTML table.
         </tbody>
       </table>
       <% if resources.model.count > 25 %>
-        <div class="px-6 mb-5 text-gray-600 border-gray-300">
+        <div class="px-6 my-5 text-gray-600 border-gray-300">
           <%= paginate resources, param_name: '_page' %>
         </div>
       <% end %>

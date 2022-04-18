@@ -13,28 +13,27 @@ By default, it renders:
 %>
 <!DOCTYPE html>
 <html data-theme="corporate" lang="<%= I18n.locale %>">
-<head>
-  <meta charset="utf-8">
-  <meta name="ROBOTS" content="NOODP">
-  <meta name="viewport" content="initial-scale=1">
-  <title>
-    <%= content_for(:title) %> - <%= application_title %>
-  </title>
-  <%= favicon_link_tag asset_path('logo/favicon_io_white/favicon.ico') %>
-  <%= render "stylesheet" %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag if defined?(csp_meta_tag) %>
-  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.9.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <head>
+    <meta charset="utf-8">
+    <meta name="ROBOTS" content="NOODP">
+    <meta name="viewport" content="initial-scale=1">
+    <title>
+      <%= content_for(:title) %> | SMUCA
+    </title>
+    <%= favicon_link_tag asset_path('logo/favicon_io_white/favicon.ico') %>
+    <%= render "stylesheet" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag if defined?(csp_meta_tag) %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%# javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
   <%= render "icons" %>
   <div id="root">
-    <div class="relative md:ml-64">
-      <%= render "navigation" -%>
-    </div>
-    <div class="relative md:ml-64">
+    <%= render "navigation" -%>
+    <div class="relative bg-gray-100 md:ml-64">
       <%= yield %>
     </div>
   </div>

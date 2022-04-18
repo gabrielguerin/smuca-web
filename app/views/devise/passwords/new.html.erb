@@ -1,9 +1,9 @@
 <% content_for :page_title, 'SMUCA — Mot de passe oublié' %>
 <section class="py-20 bg-gray-100">
   <div class="container max-w-lg mx-auto">
+    <%= render "devise/shared/error_messages", resource: resource %>
     <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-md w-100 sm:p-6 lg:p-8">
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "space-y-6", method: :post }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
         <h5 class="text-3xl font-medium text-gray-900">Mot de passe oublié ?</h5>
         <div>
           <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
