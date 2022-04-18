@@ -22,12 +22,12 @@ to display a collection of resources in an HTML table.
     <div class="px-4 py-3 mb-0 border-0 rounded-t">
       <div class="flex flex-wrap items-center">
         <div class="relative flex-1 flex-grow w-full max-w-full px-4">
-          <h3 class="text-base font-semibold text-blueGray-700">
+          <h3 class="text-base font-semibold text-gray-700">
             <%= content_for(:title) %>
           </h3>
         </div>
         <div class="relative flex-1 flex-grow w-full max-w-full px-4 text-right">
-          <%= link_to(t("administrate.actions.new_resource", name: display_resource_name(page.resource_name, singular: true).downcase), [:new, namespace, page.resource_path.to_sym], class: "inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out hover:text-white") if valid_action?(:new) && show_action?(:new, new_resource) %>
+          <%= link_to(t("administrate.actions.new_resource", name: display_resource_name(page.resource_name, singular: true).downcase), [:new, namespace, page.resource_path.to_sym], class: "inline-block px-6 py-2.5 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-800 active:shadow-lg transition duration-150 ease-in-out hover:text-white") if valid_action?(:new) && show_action?(:new, new_resource) %>
         </div>
       </div>
     </div>
