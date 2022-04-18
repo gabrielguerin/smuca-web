@@ -227,8 +227,8 @@ fr:
           other: "<b>tous les %{count}</b> %{entry_name}"
   views:
     pagination:
-      first: "&laquo; Premier"
-      last: Dernier &raquo;
-      next: Suivant &rsaquo;
-      previous: "&lsaquo; Précédent"
+      first: "&laquo;"
+      last: "&raquo;"
+      next: "&rsaquo;"
+      previous: "&lsaquo;"
       truncate: "&hellip;"
