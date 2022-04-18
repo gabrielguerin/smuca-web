@@ -2,7 +2,7 @@
   <td><%= link_to(
     t("administrate.actions.edit"),
     [:edit, namespace, resource],
-    class: "font-medium text-blue-600 hover:text-blue-700 hover:underline",
+    class: "font-medium text-sky-600 hover:text-sky-700 hover:underline",
   ) if show_action?(:edit, resource) %></td>
 <% end %>
 <% if valid_action?(:destroy, collection_presenter.resource_name) %>
