@@ -24,7 +24,7 @@
                 </div>
                 <div class="ml-6 grow">
                   <p class="mb-1 font-bold">Téléphone</p>
-                  <p class="text-gray-500">+33 6 00 00 00 00</p>
+                  <%= phone_to "+33 6 00 00 00 00", class: "text-gray-500" %>
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="ml-6 grow">
                   <p class="mb-1 font-bold">Email</p>
-                  <p class="text-gray-500">cpotin@smuca.fr</p>
+                  <%= mail_to "contact@smuca.fr", class: "text-gray-500" %>
                 </div>
               </div>
             </div>
