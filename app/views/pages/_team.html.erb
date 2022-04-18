@@ -1,6 +1,6 @@
 <section class="text-gray-600 body-font" id="team">
   <div class="container px-5 py-24 mx-auto">
-    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+    <div class="max-w-xl mb-10 md:mx-auto text-center lg:max-w-2xl md:mb-12">
       <h1 class="mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font">
         <span class="relative">Voici</span>
         notre équipe de professionnels talentueux
@@ -9,12 +9,12 @@
         12 médecins spécialisés dans la médecine d'urgence impliqués dans le soin de qualité, rapide, pour tous, avec une expérience hospitalière (SMUR, SAU, USC). Nous travaillons en équipe et assurons la compétence médicale au sein de services libéraux impliqués dans la FMC, avec de nombreuses compétences complémentaires (réanimation, traumatologie, médecine du sport, échographie...)
       </p>
     </div>
-    <div class="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3 justify-center md:justify-start">
       <% @users.each do |user| %>
         <%= render 'users/user_card', user: user %>
       <% end %>
     </div>
-    <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20">
+    <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20 text-center">
       <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div class="flex flex-col mb-16 sm:text-center sm:mb-0">
           <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
