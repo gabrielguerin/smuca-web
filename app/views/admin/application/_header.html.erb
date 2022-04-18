@@ -8,9 +8,9 @@
       <%= render("search", search_term: search_term, resource_name: display_resource_name(page.resource_name)) %>
     <% end %>
     <ul class="flex-col items-center hidden list-none md:flex-row md:flex">
-      <a class="block text-blueGray-500" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
+      <a class="block text-gray-500" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
         <div class="flex items-center">
-          <span class="inline-flex items-center justify-center w-12 h-12 text-sm text-white rounded-full bg-blueGray-200">
+          <span class="inline-flex items-center justify-center w-12 h-12 text-sm text-white rounded-full bg-gray-200">
             <%= image_tag(current_user.avatar, class: "w-12 h-12 w-full align-middle border-none rounded-full shadow-lg object-cover", alt: "avatar") %>
           </span>
         </div>

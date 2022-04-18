@@ -14,9 +14,9 @@ as defined by the routes in the `admin/` namespace
     <%= link_to('SMUCA', admin_root_path, class: "self-center text-xl font-semibold whitespace-nowrap inline-block p-4 px-0 mr-0 text-left uppercase md:block whitespace-nowrap text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-0") %>
     <ul class="flex flex-wrap items-center list-none md:hidden">
       <li class="relative inline-block">
-        <a class="block text-blueGray-500" href="#pablo" onclick="openDropdown(event,'user-responsive-dropdown')" >
+        <a class="block text-gray-500" href="#pablo" onclick="openDropdown(event,'user-responsive-dropdown')" >
           <div class="flex items-center">
-            <span class="inline-flex items-center justify-center w-12 h-12 text-sm text-white rounded-full bg-blueGray-200">
+            <span class="inline-flex items-center justify-center w-12 h-12 text-sm text-white rounded-full bg-gray-200">
               <%= image_tag(current_user.avatar, class: "w-12 h-12 w-full align-middle border-none rounded-full shadow-lg object-cover", alt: "avatar") %>
             </span>
           </div>
@@ -41,7 +41,7 @@ as defined by the routes in the `admin/` namespace
       </li>
     </ul>
     <div class="absolute top-0 left-0 right-0 z-40 items-center flex-1 hidden h-auto overflow-x-hidden overflow-y-auto rounded shadow md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:shadow-none" id="example-collapse-sidebar">
-      <div class="block pb-4 mb-4 border-b border-solid md:min-w-full md:hidden border-blueGray-200">
+      <div class="block pb-4 mb-4 border-b border-solid md:min-w-full md:hidden border-gray-200">
         <div class="flex flex-wrap">
           <div class="w-6/12">
             <%= link_to('SMUCA', admin_root_path, class: "self-center text-xl font-semibold whitespace-nowrap inline-block p-4 px-0 mr-0 font-bold text-left uppercase md:block md:pb-2 whitespace-nowrap text-gray-800 hover:text-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-0") %>
