@@ -1,11 +1,11 @@
 <% content_for :page_title, 'SMUCA — Modifier mon compte' %>
 <%= content_tag :section, class: "relative overflow-hidden bg-no-repeat bg-cover bg-blend-darken", style: "background-position: 50%; background-image: url(#{asset_path 'devise/registrations/edit.jpg'})" do %>
-  <div class="container max-w-lg py-20 mx-auto" style="max-width:600px">
+  <div class="block px-2 py-10 rounded-lg shadow-lg md:py-12 md:px-6" style="max-width:600px">
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-md w-100 sm:p-6 lg:p-8">
+    <div class="p-4 bg-white rounded-lg shadow-md w-100 sm:p-6 lg:p-8">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="mb-5">
-          <h5 class="text-3xl font-medium text-gray-900">
+          <h5 class="text-3xl font-medium text-gray-900 text-center md:text-left">
             Modifier mon compte
           </h5>
         </div>
@@ -71,7 +71,7 @@
             <%= f.button "Modifier mon compte", class: "w-full inline-block px-7 py-3 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-800 active:shadow-lg transition duration-150 ease-in-out" %>
           </div>
         </div>
-        <div class="text-sm font-medium text-gray-500">
+        <div class="text-sm font-medium text-gray-500 text-center md:text-left">
           <%= link_to "Supprimer mon compte", new_user_session_path, class: "text-red-700 hover:underline" %>
         </div>
       <% end %>
