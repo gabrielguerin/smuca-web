@@ -92,40 +92,22 @@ end
 
 # Create partners
 
-clinique_anne_artois = Partner.new(
-  name: "Clinique Anne d'Artois"
-)
+partners_csv = File.read(Rails.root.join('lib', 'seeds', 'partners.csv'), encoding: 'bom|utf-8')
 
-clinique_anne_artois.logo.attach(
-  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'hpl.png')),
+partners = CSV.parse(partners_csv, headers: true, col_sep: ',')
 
-  filename: 'clinique_anne_artois_logo.png',
+partners.each do |row|
+  partner = Partner.new
 
-  content_type: 'image/png'
-)
+  partner.name = row['name']
 
-clinique_saint_ame = Partner.new(
-  name: 'Clinique Saint-Amé'
-)
+  partner.logo.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', (row['logo_filename']).to_s)),
 
-clinique_saint_ame.logo.attach(
-  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'ramsay_sante.png')),
+    filename: row['logo_filename'],
 
-  filename: 'clinique_saint-amé_logo.png',
+    content_type: row['content_type']
+  )
 
-  content_type: 'image/png'
-)
-
-clinique_2_caps = Partner.new(
-  name: 'Clinique des 2 Caps'
-)
-
-clinique_2_caps.logo.attach(
-  io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', 'hpl.png')),
-
-  filename: 'clinique_2_caps_logo.png',
-
-  content_type: 'image/png'
-)
-
-[clinique_anne_artois, clinique_saint_ame, clinique_2_caps].each(&:save!)
+  partner.save!
+end
