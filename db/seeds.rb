@@ -53,6 +53,8 @@ users.each do |row|
 
   user.phone = row['phone']
 
+  user.role = 1
+
   user.password = row['password']
 
   user.password_confirmation = row['password_confirmation']
