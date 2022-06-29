@@ -20,6 +20,17 @@
           <li>
             <%= link_to "Nous contacter", new_contact_path, class: "text-gray-600 hover:text-gray-800" %>
           </li>
+          <% if current_user %>
+            <% if current_user.admin? %>
+              <li>
+                <%= link_to "Dashboard", admin_contacts_path, class: "text-gray-600 hover:text-gray-800" %>
+              </li>
+            <% end %>
+          <% else %>
+            <li>
+              <%= link_to "Se connecter", new_user_session_path, class: "text-gray-600 hover:text-gray-800" %>
+            </li>
+          <% end %>
         </nav>
       </div>
       <div class="w-full px-4 lg:w-2/5 md:w-1/2">
