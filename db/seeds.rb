@@ -38,13 +38,11 @@ end
 
 # Create users
 
-users_csv = File.read(Rails.root.join('lib', 'seeds', 'users.csv'))
+users_csv = File.read(Rails.root.join('lib', 'seeds', 'users.csv'), encoding: 'bom|utf-8')
 
-users = CSV.parse(users_csv, headers: true, col_sep: ',', encoding: 'utf-8')
+users = CSV.parse(users_csv, headers: true, col_sep: ',')
 
 users.each do |row|
-  puts row
-
   user = User.new
 
   user.first_name = row['first_name']
