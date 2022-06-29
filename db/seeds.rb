@@ -18,6 +18,10 @@ require 'faker'
 
 require 'csv'
 
+# Require Rails Internationalization
+
+require 'i18n'
+
 # Delete everything
 
 [Contact, Company, User, Partner].each(&:delete_all)
@@ -34,9 +38,9 @@ end
 
 # Create users
 
-users_csv = File.read(Rails.root.join('lib', 'seeds', 'users.csv'))
+users_csv = File.read(Rails.root.join('lib', 'seeds', 'users.csv'), encoding: 'bom|utf-8')
 
-users = CSV.parse(users_csv, headers: true, col_sep: ',', encoding: 'utf-8')
+users = CSV.parse(users_csv, headers: true, col_sep: ',')
 
 users.each do |row|
   user = User.new
@@ -47,7 +51,7 @@ users.each do |row|
 
   user.job_title = row['job_title']
 
-  user.email = row['email']
+  user.email = I18n.transliterate(row['email'])
 
   user.description = row['description']
 
@@ -59,13 +63,19 @@ users.each do |row|
 
   user.password_confirmation = row['password_confirmation']
 
-  user.avatar.attach(
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'users', 'seeds', 'avatars', (row['avatar_filename']).to_s)),
+  avatar = Rails.root.join('app', 'assets', 'images', 'users', 'seeds', 'avatars', I18n.transliterate(row['avatar_filename'].to_s))
 
-    filename: row['avatar_filename'],
+  if File.exist?(avatar)
 
-    content_type: row['content_type']
-  )
+    user.avatar.attach(
+      io: File.open(avatar),
+
+      filename: row['avatar_filename'],
+
+      content_type: row['content_type']
+    )
+
+  end
 
   user.save!
 end
@@ -106,7 +116,7 @@ partners.each do |row|
   partner.logo.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'partners', (row['logo_filename']).to_s)),
 
-    filename: row['logo_filename'],
+    filename: I18n.transliterate(row['logo_filename']),
 
     content_type: row['content_type']
   )
