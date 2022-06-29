@@ -63,14 +63,14 @@ users.each do |row|
 
   user.password_confirmation = row['password_confirmation']
 
-  avatar = Rails.root.join('app', 'assets', 'images', 'users', 'seeds', 'avatars', (row['avatar_filename']).to_s)
+  avatar = Rails.root.join('app', 'assets', 'images', 'users', 'seeds', 'avatars', I18n.transliterate(row['avatar_filename'].to_s))
 
   if File.exist?(avatar)
 
     user.avatar.attach(
       io: File.open(avatar),
 
-      filename: I18n.transliterate(row['avatar_filename']),
+      filename: row['avatar_filename'],
 
       content_type: row['content_type']
     )
