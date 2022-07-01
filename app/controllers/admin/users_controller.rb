@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Admin
   class UsersController < Admin::ApplicationController
     # Overwrite any of the RESTful controller actions to implement custom behavior
@@ -42,5 +44,12 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
+    # Delete/Remove avatar attachment
+    # **SECURITY NOTICE**: first verify whether current user is authorized to perform the action.
+    def destroy_avatar
+      avatar = requested_resource.avatar
+      avatar.purge
+      redirect_back(fallback_location: requested_resource)
+    end
   end
 end
