@@ -10,10 +10,8 @@ By default, the input is a text field for the image's URL.
   A wrapper around the image url pulled from the database.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/Image
 %>
-<div class="field-unit__label">
-  <%= f.label field.attribute %>
-</div>
-<div class="field-unit__field">
+<%= f.label field.attribute, class: "block mb-2 text-sm font-medium text-gray-900" %>
+<div>
   <% if field.attached? %>
     <%= render partial: 'fields/active_storage/items', locals: { field: field } %>
   <% end %>
@@ -22,6 +20,6 @@ By default, the input is a text field for the image's URL.
           I18n.t("administrate.fields.active_storage.add", default: 'Add') :
           I18n.t("administrate.fields.active_storage.replace", default: 'Replace')
     %>
-    <%= f.file_field field.attribute, multiple: field.many?, direct_upload: field.direct? %>
+    <%= f.file_field field.attribute, multiple: field.many?, direct_upload: field.direct?, class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-sky-600 focus:outline-none", type:"file", id:"formFile" %>
   </div>
 </div>
