@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # Admin routes
 
   namespace :admin do
-    resources :users
+    resources :users do
+      delete :avatar, on: :member, action: :destroy_avatar
+    end
 
     resources :companies
 
