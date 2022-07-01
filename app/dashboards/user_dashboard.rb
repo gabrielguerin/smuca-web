@@ -15,6 +15,8 @@ class UserDashboard < Administrate::BaseDashboard
 
   ATTRIBUTE_TYPES = {
 
+    avatar: Field::ActiveStorage,
+
     id: Field::Number,
 
     first_name: Field::String,
@@ -73,6 +75,8 @@ class UserDashboard < Administrate::BaseDashboard
 
   SHOW_PAGE_ATTRIBUTES = %i[
 
+    avatar
+
     id
 
     first_name
@@ -98,6 +102,8 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
 
   FORM_ATTRIBUTES = %i[
+
+    avatar
 
     first_name
 
