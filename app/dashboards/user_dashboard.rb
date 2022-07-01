@@ -35,13 +35,13 @@ class UserDashboard < Administrate::BaseDashboard
 
     email: Field::String,
 
-    password: Field::String,
+    password: Field::String.with_options(searchable: false),
 
-    password_confirmation: Field::String,
+    password_confirmation: Field::String.with_options(searchable: false),
 
-    encrypted_password: Field::String,
+    encrypted_password: Field::String.with_options(searchable: false),
 
-    reset_password_token: Field::String,
+    reset_password_token: Field::String.with_options(searchable: false),
 
     reset_password_sent_at: Field::DateTime,
 
