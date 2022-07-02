@@ -127,3 +127,7 @@ gem 'kaminari'
 # Official AWS SDK for Ruby
 
 gem 'aws-sdk-s3', require: false
+
+# Support Active Storage in Administrate
+
+gem 'administrate-field-active_storage'

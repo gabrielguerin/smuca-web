@@ -4,13 +4,17 @@ Rails.application.routes.draw do
   # Admin routes
 
   namespace :admin do
-    resources :users
+    resources :users do
+      delete :avatar, on: :member, action: :destroy_avatar
+    end
 
     resources :companies
 
     resources :contacts
 
-    resources :partners
+    resources :partners do
+      delete :logo, on: :member, action: :destroy_logo
+    end
 
     root to: 'contacts#index'
   end
