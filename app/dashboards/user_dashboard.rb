@@ -15,6 +15,8 @@ class UserDashboard < Administrate::BaseDashboard
 
   ATTRIBUTE_TYPES = {
 
+    avatar: Field::ActiveStorage,
+
     id: Field::Number,
 
     first_name: Field::String,
@@ -33,13 +35,13 @@ class UserDashboard < Administrate::BaseDashboard
 
     email: Field::String,
 
-    password: Field::String,
+    password: Field::String.with_options(searchable: false),
 
-    password_confirmation: Field::String,
+    password_confirmation: Field::String.with_options(searchable: false),
 
-    encrypted_password: Field::String,
+    encrypted_password: Field::String.with_options(searchable: false),
 
-    reset_password_token: Field::String,
+    reset_password_token: Field::String.with_options(searchable: false),
 
     reset_password_sent_at: Field::DateTime,
 
@@ -73,6 +75,8 @@ class UserDashboard < Administrate::BaseDashboard
 
   SHOW_PAGE_ATTRIBUTES = %i[
 
+    avatar
+
     id
 
     first_name
@@ -98,6 +102,8 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
 
   FORM_ATTRIBUTES = %i[
+
+    avatar
 
     first_name
 
