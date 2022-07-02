@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
     resources :contacts
 
-    resources :partners
+    resources :partners do
+      delete :logo, on: :member, action: :destroy_logo
+    end
 
     root to: 'contacts#index'
   end
