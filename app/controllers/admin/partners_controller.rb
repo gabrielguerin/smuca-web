@@ -8,6 +8,13 @@ module Admin
     #   send_foo_updated_email(requested_resource)
     # end
 
+    def destroy_logo
+      logo = requested_resource.logo
+      logo.purge
+      redirect_back(fallback_location: requested_resource)
+    end
+
+
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`
     # actions.
