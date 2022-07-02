@@ -15,6 +15,8 @@ class PartnerDashboard < Administrate::BaseDashboard
 
   ATTRIBUTE_TYPES = {
 
+    logo: Field::ActiveStorage,
+
     logo_attachment: Field::HasOne,
 
     logo_blob: Field::HasOne,
@@ -49,6 +51,8 @@ class PartnerDashboard < Administrate::BaseDashboard
 
   SHOW_PAGE_ATTRIBUTES = %i[
 
+    logo
+
     name
 
   ].freeze
@@ -60,6 +64,8 @@ class PartnerDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
 
   FORM_ATTRIBUTES = %i[
+
+    logo
 
     name
 
