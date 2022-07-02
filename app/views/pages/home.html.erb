@@ -1,8 +1,36 @@
 <% content_for :page_title, 'SMUCA — Accueil' %>
-<%= render 'hero' %>
-<%= render 'team' %>
-<div class="bg-gray-100">
-  <%= render 'partners' %>
-  <%= render 'divider' %>
-  <%= render 'testimonial' %>
+<div class="text-center">
+  <section class="relative mb-10">
+    <%= render 'hero' %>
+  </section>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <%= render 'header' %>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font">
+    <div class="container mx-auto">
+      <%= render 'text' %>
+    </div>
+  </section>
+  <section class="text-gray-600 body-font" id="team">
+    <div class="container px-5 py-24 mx-auto">
+      <%= render 'team' %>
+    </div>
+  </section>
+  <div class="bg-gray-100">
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto text-center">
+        <%= render 'partners' %>
+      </div>
+    </section>
+    <section>
+      <%= render 'divider' %>
+    </section>
+    <section class="text-gray-600 body-font">
+      <div class="px-4 py-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <%= render 'testimonial' %>
+      </div>
+    </section>
+  </div>
 </div>
