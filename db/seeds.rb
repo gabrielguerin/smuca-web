@@ -92,7 +92,7 @@ end
 
     last_name: last_name,
 
-    email: "#{first_name}.#{last_name.parameterize(separator: '_')}@#{Faker::Internet.domain_name}",
+    email: "#{first_name}.#{last_name.parameterize(separator: '_')}@#{Faker::Internet.domain_name}".downcase,
 
     phone: Faker::Base.with_locale('fr') { Faker::PhoneNumber.cell_phone_with_country_code },
 
