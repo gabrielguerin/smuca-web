@@ -1,36 +1,178 @@
 <% content_for :page_title, 'SMUCA — Accueil' %>
 <div class="text-center">
-  <section class="relative mb-10">
-    <%= render 'hero' %>
+  <!-- Hero -->
+  <section class="relative">
+    <%= image_tag("pages/hero.jpg", class: "absolute inset-0 object-cover w-full h-full") %>
+    <div class="relative flex items-center justify-center min-h-screen bg-gray-900 bg-opacity-75">
+      <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="flex flex-col items-center justify-between xl:flex-row">
+          <div class="w-full max-w-xl mb-6 text-white">
+            <%= image_tag("logo/logo-white.png", class: "xl:w-1/4 lg:w-1/3 md:w-1/2 w-2/3 block mx-auto m-5") %>
+            <h1 class="mt-0 mb-6 text-5xl font-bold">
+              SMUCA
+            </h1>
+            <p class="mb-8 text-lg">
+              Selarl de médecine aiguë
+            </p>
+            <%= link_to "Qui sommes-nous ?", "#about", class: "inline-block px-7 py-3 bg-sky-600 text-white font-medium leading-snug rounded hover:bg-sky-700 focus:bg-sky-700 focus:outline-none focus:ring-0 active:bg-sky-800 transition duration-150 ease-in-out uppercase" %>
+            <p class="mt-8">
+              Béthune • Lambres-lez-Douai • Coquelles • Gouvieux • Valenciennes
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+  <!-- End Hero -->
+  <!-- Content Header -->
   <section class="text-gray-600 body-font" id="about">
     <div class="container px-5 py-24 mx-auto">
-      <%= render 'about_header' %>
+      <div class="max-w-xl md:mx-auto lg:max-w-2xl">
+        <h1 class="pb-6 text-2xl font-medium text-gray-900 title-font">
+          La SMUCA, SELARL de médecins, est une société d’exercice libéral
+        </h1>
+        <p class="text-xl font-light mt-10">
+          Créée en 2018 et domiciliée à Béthune (62), elle est née de l’association de trois médecins urgentistes exerçant aux urgences de la clinique Anne d’Artois à Béthune, rapidement rejoints par 9 médecins tous cooptés, permettant de mutualiser avec les urgences de la clinique de St Amé à Lambres lez Douai. 
+        </p>
+      </div>
     </div>
   </section>
+  <!-- End Content Header -->
+  <%= render 'divider' %>
+  <!-- Content -->
   <section class="text-gray-600 body-font">
-    <div class="container mx-auto">
-      <%= render 'about_content' %>
+    <div class="container mx-auto px-5 py-24">
+      <div class="flex flex-col items-center content-center px-8 leading-6 md:flex-row max-w-7xl lg:px-16 mb-16">
+        <div class="relative w-full max-w-md my-5 md:ml-0 md:my-0 md:max-w-none md:w-1/2">
+          <%= image_tag("pages/content_image_1.svg", class: "p-6 xl:px-20", alt: "content_image_1") %>
+        </div>
+        <div class="order-first w-full md:w-1/2 md:pl-10 md:order-none md:text-left">
+          <h2 class="mb-6 text-2xl font-medium text-gray-900 title-font">
+            Notre activité
+          </h2>
+          <p class="leading-7 pb-4 lg:text-lg">
+            Notre activité principale est donc initialement l’exercice de la médecine d’urgence en structure libérale, dans le Nord et le Pas-de-Calais. 
+          </p>
+          <p class="leading-7 pb-4 lg:text-lg">
+            Cette activité a rapidement évolué vers la participation à de structures d’accueil et de soins non programmés en clinique (SOS main côte d’opale depuis 2021 et clinique des jockeys de Gouvieux depuis cette année) tout en se renforçant dans les services d’urgence autorisés avec début de participation au sein de la polyclinique Vauban de Valenciennes. 
+          </p>
+        </p>
+      </div>
     </div>
-  </section>
+    <div class="flex flex-col items-center content-center px-8 leading-6 md:flex-row max-w-7xl lg:px-16 mb-16">
+      <div class="order-first w-full md:w-1/2 md:pr-10 md:order-none md:text-right">
+        <h2 class="mb-6 text-2xl font-medium text-gray-900 title-font">
+          Notre positionnement
+        </h2>
+        <p class="leading-7 pb-4 lg:text-lg">
+          Enfin, la société se positionne actuellement sur la prochaine évolution de l’offre de santé : la création de structures de centres de soins non programmés en dehors des établissements, en coordination avec des cabinets de radiologie de ville et en lien avec le réseau local de spécialistes. 
+        </p>
+        <p class="leading-7 pb-4 lg:text-lg">
+          Ces cabinets doivent permettre la création d’un maillon intermédiaire entre les urgences et la médecine de ville, délestant ces deux niveaux de la médecine aiguë technique sans risque vital : il faut donc pouvoir réaliser des plâtres, de attelles, des sutures, des ECG (…).
+        </p>
+      </div>
+      <div class="relative w-full max-w-md my-5 md:ml-0 md:my-0 md:max-w-none md:w-1/2">
+        <%= image_tag("pages/content_image_2.svg", class: "p-6 xl:px-20", alt: "content_image_2") %>
+      </div>
+    </div>
+    <div class="flex flex-col items-center content-center px-8 leading-6 md:flex-row max-w-7xl lg:px-16">
+      <div class="relative w-full max-w-md my-5 md:ml-0 md:my-0 md:max-w-none md:w-1/2">
+        <%= image_tag("pages/content_image_3.svg", class: "p-6 xl:px-20", alt: "content_image_1") %>
+      </div>
+      <div class="order-first w-full md:w-1/2 md:pl-10 md:order-none md:text-left">
+        <h2 class="mb-6 text-2xl font-medium text-gray-900 title-font">
+          Notre objectif
+        </h2>
+        <p class="leading-7 pb-4 lg:text-lg">
+          Il s’agit de devenir naturellement un effecteur des services d’accès aux soins (SAS) pour cette médecine générale aigüe technique, nous nous inscrivons donc dans la logique du pacte de refondation des urgences de 2019 qui a été réaffirmée par le Ségur de la santé en 2020, ainsi que dans le cadre de la proposition de lois visant à répondre à la demande des patients par la créations de points d’accueil pour soins immédiats adoptée en seconde lecture le 28 janvier 2021 et en attente de promulgation. 
+        </p>
+        <p class="leading-7 pb-4 lg:text-lg">
+          Notre volonté est de nous déployer sur un éventail cohérent de pratiques de la médecine aiguë en couvrant de l’urgence en établissement à la “bobologie” en ville. Avec des variétés d’horaires de travail allant du 24/7 à l’activité de jour et de semaine, nous pouvons ainsi adapter nos pratiques aux différentes étapes de nos vies professionnelles et familiales. 
+        </p>
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End Content -->
+<%= render 'divider' %>
+<!-- Team -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="max-w-xl mb-20 md:mx-auto lg:max-w-2xl">
+      <h1 class="pb-6 text-2xl font-medium text-gray-900 title-font">
+        Actuellement, la société comporte 20 médecins tous associés
+      </h1>
+      <p class="leading-7 pb-4 lg:text-lg">
+        Et moins de 5 remplaçants très occasionnels qui se répartissent sur les sites suivants : Urgences de la clinique Anne d’Artois à Béthune, Urgences de la clinique St Amé à Lambres-lez-Douai, SOS main côte d’opale à Coquelles, Accueil des soins non programmés de la clinique des jockeys à Gouvieux et Urgences de la clinique Vauban à Valenciennes.
+      </p>
+    </div>
+    <div class="grid gap-10 row-gap-8 mx-auto my-10 sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3 justify-center md:justify-start">
+      <% @users.each do |user| %>
+        <%= render 'users/user_card', user: user %>
+      <% end %>
+    </div>
+    <div class="max-w-xl mt-20 mb-10 md:mx-auto lg:max-w-2xl">
+      <p class="leading-7 pb-8 lg:text-lg">
+        Pour 2022, nous avons le projet d’ouvrir un nouveau service d’accueil des soins non programmés sur une clinique de l’agglomération lilloise. 
+        Enfin, nous préparons des installations en centres de soins non programmés, hors établissement, sur le Valenciennois, le Béthunois, le Douaisis, Carvin, Templeuve… Sachant que chaque site est soumis à la cooptation de nouveaux associés agréés au sein de la selarl.
+      </p>
+      <h2 class="mb-2 text-2xl font-medium text-gray-900 title-font">
+        Nous collaborons toujours dans la durée et sur des projets durables
+      </h2>
+    </div>
+    <div>
+      <%= link_to "Découvrir toute l'équipe", users_path, class: "inline-block px-7 py-3 bg-sky-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-800 active:shadow-lg transition duration-150 ease-in-out" %>
+    </div>
+  </div>
+</section>
+<!-- End Team -->
+<!-- Partners -->
+<div class="bg-gray-100">
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
-      <%= render 'team' %>
+      <h1 class="pb-6 text-2xl font-medium text-gray-900 title-font">
+        Nos partenaires nous font confiance
+      </h1>
+      <div class="flex justify-center flex-wrap -mx-4 my-10 overflow-hidden xl:-mx-3">
+        <% @partners.each do |partner| %>
+          <div class="my-4 px-4 w-full overflow-hidden md:w-full lg:w-1/2 xl:w-1/3">
+            <%= render 'partners/partner_card', partner: partner %>
+          </div>
+        <% end %>
+      </div>
+      <div class="flex flex-col w-full mt-10">
+        <p class="text-xl font-light mt-10">Nous travaillons sur différents sites.
+          <br>
+          Toujours en contrat avec la société et de façon durable.
+        </p>
+      </div>
     </div>
   </section>
-  <div class="bg-gray-100">
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto text-center">
-        <%= render 'partners' %>
+  <!-- End Partners -->
+  <%= render 'divider' %>
+  <!-- Testimonial -->
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col max-w-screen-lg overflow-hidden bg-white rounded shadow-sm lg:flex-row sm:mx-auto">
+        <div class="relative lg:w-1/2">
+          <%= image_tag("pages/testimonial.jpg", class: "object-cover w-full lg:absolute h-80 lg:h-full", alt: "contact-new") %>
+          <svg class="absolute top-0 right-0 hidden h-full text-white lg:inline-block" viewBox="0 0 20 104" fill="currentColor">
+            <polygon points="17.3036738 5.68434189e-14 20 5.68434189e-14 20 104 0.824555778 104"></polygon>
+          </svg>
+        </div>
+        <div class="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2 md:text-left">
+          <h1 class="pb-6 text-2xl font-medium text-gray-900 title-font">
+            Nous sommes un grand collectif. Toujours prêts à intervenir.
+          </h1>
+          <p class="text-lg leading-relaxed">
+            Nous constituons des équipes de médecins soit urgentistes, soit généralistes rompus au soin non programmé. Notre philosophie étant de nous associer à des gens de valeurs, polyvalents, plutôt que d’ouvrir des établissements vides et de chercher ensuite des candidats.
+          </p>
+          <div class="flex items-center justify-center md:justify-start">
+            <%= link_to "Nous contacter", new_contact_path, class: "inline-block px-7 py-3 mt-10 bg-sky-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-800 active:shadow-lg transition duration-150 ease-in-out" %>
+          </div>
+        </div>
       </div>
-    </section>
-    <section>
-      <%= render 'divider' %>
-    </section>
-    <section class="text-gray-600 body-font">
-      <div class="px-4 py-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <%= render 'testimonial' %>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
+  <!-- End Testimonial -->
 </div>
