@@ -1,0 +1,7 @@
+meta_product_name: "SMUCA"
+meta_title: "SMUCA — Selarl de médecine aiguë"
+meta_description: ""
+# Should exist in 'app/assets/images/'
+meta_image: "facebook_opengraph-01.jpg"
+# Required for Twitter Cards
+twitter_account: "@product_twitter_account"
