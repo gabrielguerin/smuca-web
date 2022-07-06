@@ -33,7 +33,7 @@
           </ul>
         </div>
       <% else %>
-        <%= link_to "Se connecter", new_user_session_path, class: "inline-block px-6 py-2.5 bg-sky-600 text-white font-medium leading-snug rounded hover:bg-sky-700 focus:bg-sky700 focus:outline-none focus:ring-0 active:bg-bsky800 transition duration-150 ease-in-out" %>
+        <%= link_to "Nous contacter", new_contact_path, class: "inline-block px-6 py-2.5 bg-sky-600 text-white font-medium leading-snug rounded hover:bg-sky-700 focus:bg-sky700 focus:outline-none focus:ring-0 active:bg-bsky800 transition duration-150 ease-in-out" %>
       <% end %>
       <button data-collapse-toggle="mobile-menu-2" type="button"
         class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -59,9 +59,11 @@
         <li>
           <%= link_to "Notre équipe", users_path, class: class_names('block px-6 py-2.5 mb-2 md:mb-0 text-gray-700 font-medium text-base leading-snug rounded hover:bg-gray-100 md:focus:bg-gray-100 md:focus:outline-none md:focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out', { "bg-gray-100": current_page?(users_path) }) %>
         </li>
-        <li>
-          <%= link_to "Nous contacter", new_contact_path, class: class_names('block px-6 py-2.5 mb-2 md:mb-0 text-gray-700 font-medium text-base leading-snug rounded hover:bg-gray-100 md:focus:bg-gray-100 md:focus:outline-none md:focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out', { "bg-gray-100": current_page?(new_contact_path) }) %>
-        </li>
+        <% if current_user %>
+          <li>
+            <%= link_to "Nous contacter", new_contact_path, class: class_names('block px-6 py-2.5 mb-2 md:mb-0 text-gray-700 font-medium text-base leading-snug rounded hover:bg-gray-100 md:focus:bg-gray-100 md:focus:outline-none md:focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out', { "bg-gray-100": current_page?(new_contact_path) }) %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
