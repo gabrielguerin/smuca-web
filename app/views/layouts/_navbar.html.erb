@@ -1,7 +1,7 @@
 <nav class="px-2 py-4 bg-white border-gray-200 shadow-md sm:px-4">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <%= link_to(root_path, class: "flex items-center rounded-md", alt: "SMUCA Logo") do %>
-      <%= image_tag("logo/logo-blue.png", class: "mr-3 h-6 sm:h-9") %>
+      <%= image_tag("logo/logo-blue.png", class: "mr-3 h-6 sm:h-9", alt: "#{meta_product_name} logo") %>
       <span class="self-center text-xl font-semibold uppercase whitespace-nowrap hover:text-gray-700">Smuca</span>
     <% end %>
     <div class="flex items-center md:order-2">
@@ -9,7 +9,7 @@
         <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
           <span class="sr-only">Open user menu</span>
-          <%= image_tag(current_user.avatar, class: "w-8 h-8 rounded-full object-cover object-top", alt: "user photo") %>
+          <%= image_tag(current_user.avatar, class: "w-8 h-8 rounded-full object-cover object-top", alt: "#{current_user.full_name} avatar") %>
         </button>
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow" id="dropdown"
         style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(1036.5px, 881.5px, 0px);"
@@ -33,7 +33,7 @@
           </ul>
         </div>
       <% else %>
-        <%= link_to "Se connecter", new_user_session_path, class: "inline-block px-6 py-2.5 bg-sky-600 text-white font-medium leading-snug rounded hover:bg-sky-700 focus:bg-sky700 focus:outline-none focus:ring-0 active:bg-bsky800 transition duration-150 ease-in-out" %>
+        <%= link_to "Nous contacter", new_contact_path, class: "inline-block px-6 py-2.5 bg-sky-600 text-white font-medium leading-snug rounded hover:bg-sky-700 focus:bg-sky700 focus:outline-none focus:ring-0 active:bg-bsky800 transition duration-150 ease-in-out" %>
       <% end %>
       <button data-collapse-toggle="mobile-menu-2" type="button"
         class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -59,9 +59,11 @@
         <li>
           <%= link_to "Notre équipe", users_path, class: class_names('block px-6 py-2.5 mb-2 md:mb-0 text-gray-700 font-medium text-base leading-snug rounded hover:bg-gray-100 md:focus:bg-gray-100 md:focus:outline-none md:focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out', { "bg-gray-100": current_page?(users_path) }) %>
         </li>
-        <li>
-          <%= link_to "Nous contacter", new_contact_path, class: class_names('block px-6 py-2.5 mb-2 md:mb-0 text-gray-700 font-medium text-base leading-snug rounded hover:bg-gray-100 md:focus:bg-gray-100 md:focus:outline-none md:focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out', { "bg-gray-100": current_page?(new_contact_path) }) %>
-        </li>
+        <% if current_user %>
+          <li>
+            <%= link_to "Nous contacter", new_contact_path, class: class_names('block px-6 py-2.5 mb-2 md:mb-0 text-gray-700 font-medium text-base leading-snug rounded hover:bg-gray-100 md:focus:bg-gray-100 md:focus:outline-none md:focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out', { "bg-gray-100": current_page?(new_contact_path) }) %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

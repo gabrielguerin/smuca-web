@@ -1,8 +1,8 @@
-<% content_for :page_title, 'SMUCA — Créer un compte' %>
-<section class="py-20 bg-gray-100">
-  <div class="container max-w-lg mx-auto">
-    <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-md w-100 sm:p-6 lg:p-8" style="max-width:800px">
+<% content_for :meta_title, "Créer un compte | #{meta_title}" %>
+<div class="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
+  <div class="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
+    <div class="mb-16 p-4 lg:my-20 lg:max-w-lg bg-white rounded-lg w-100" style="max-width:800px">
+      <%= render "devise/shared/error_messages", resource: resource %>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="mb-5">
           <h5 class="text-3xl font-medium text-gray-900">Créer un compte</h5>
@@ -71,4 +71,7 @@
       <% end %>
     </div>
   </div>
-</section>
+  <div class="inset-y-0 right-0 w-full max-w-xl px-4 mx-auto lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
+    <%= image_tag("devise/registrations/new.jpg", class: "object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none sm:h-96 lg:h-full", alt: "") %>
+  </div>
+</div>

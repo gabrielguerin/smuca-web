@@ -1,16 +1,22 @@
-<% content_for :page_title, 'SMUCA — Mot de passe oublié' %>
-<section class="py-20 bg-gray-100">
-  <div class="container max-w-lg mx-auto">
-    <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-md w-100 sm:p-6 lg:p-8">
+<% content_for :meta_title, "Mot de passe oublié | #{meta_title}" %>
+<div class="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0">
+  <div class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+    <svg class="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block" viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
+      <path d="M50 0H100L50 100H0L50 0Z"></path>
+    </svg>
+    <%= image_tag("devise/passwords/new.jpg", class: "object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full", alt: "") %>
+  </div>
+  <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+    <div class="p-4 mb-16 lg:my-40 lg:max-w-lg bg-white rounded-lg">
+      <%= render "devise/shared/error_messages", resource: resource %>
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: "space-y-6", method: :post }) do |f| %>
-        <h5 class="text-3xl font-medium text-gray-900">Mot de passe oublié ?</h5>
+        <h5 class="text-3xl font-medium text-gray-900 text-center md:text-left">Mot de passe oublié ?</h5>
         <div>
           <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5", placeholder: "email@smuca.fr" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-sky-600 focus:outline-none", placeholder: "email@smuca.fr" %>
         </div>
         <%= f.button "Réinitialiser mon mot de passe", class: "w-full inline-block px-7 py-3 bg-sky-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-700 hover:shadow-lg focus:bg-sky-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-800 active:shadow-lg transition duration-150 ease-in-out" %>
       <% end %>
     </div>
   </div>
-</section>
+</div>

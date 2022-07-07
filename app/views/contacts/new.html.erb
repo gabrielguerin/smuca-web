@@ -1,14 +1,14 @@
-<% content_for :page_title, 'SMUCA — Contact' %>
+<% content_for :meta_title, "Nous contacter | #{meta_title}" %>
 <div class="relative">
-  <%= image_tag("contacts/new.jpg", class: "absolute inset-0 object-cover w-full h-full") %>
-  <div class="relative bg-gray-900 bg-opacity-75">
+  <%= image_tag("contacts/new.jpg", class: "absolute inset-0 object-cover w-full h-full", alt: "") %>
+  <div class="relative">
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div class="flex flex-col items-center justify-between xl:flex-row">
         <div class="flex flex-col w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-4/12 text-white">
         </div>
         <div class="w-full max-w-xl xl:px-8 xl:w-8/12">
           <div class="container text-gray-800">
-            <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-md w-100 sm:p-6 lg:p-8">
+            <div class="p-4 bg-white rounded-lg shadow-md w-100 sm:p-6 lg:p-8">
               <%= render "form", contact: @contact %>
               <div class="flex flex-wrap -mx-4 overflow-hidden">
                 <div class="mt-6 lg:mb-0 text-center mx-auto">
