@@ -38,6 +38,12 @@ class User < ApplicationRecord
     end
   end
 
+  # Full name
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
 
   def add_default_avatar

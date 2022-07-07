@@ -11,7 +11,7 @@
       <a class="block text-gray-500" href="#" onclick="openDropdown(event,'user-dropdown')">
         <div class="flex items-center">
           <span class="inline-flex items-center justify-center w-12 h-12 text-sm text-white rounded-full bg-gray-200">
-            <%= image_tag(current_user.avatar, class: "w-12 h-12 w-full align-middle border-none rounded-full shadow-lg object-cover object-top", alt: "avatar") %>
+            <%= image_tag(current_user.avatar, class: "w-12 h-12 w-full align-middle border-none rounded-full shadow-lg object-cover object-top", alt: "#{current_user.full_name} avatar") %>
           </span>
         </div>
       </a>
