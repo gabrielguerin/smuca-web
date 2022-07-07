@@ -1,12 +1,13 @@
-<% content_for :meta_title, "Erreur 404 | #{meta_title}" %>
+<% content_for :meta_title, "Erreur 422 | #{meta_title}" %>
 <div class="min-w-screen min-h-screen bg-sky-100 flex items-center p-5 lg:p-20 overflow-hidden relative">
   <div class="flex-1 min-h-full min-w-full rounded-3xl bg-white shadow-xl p-10 lg:p-20 text-gray-800 relative md:flex items-center text-center md:text-left">
     <div class="w-full md:w-1/2">
       <div class="mb-10 md:mb-20 text-gray-600 font-light">
-        <h1 class="font-black uppercase text-3xl lg:text-5xl text-sky-500 mb-10">Vous semblez être perdu !</h1>
+        <h1 class="font-black uppercase text-3xl lg:text-5xl text-sky-500 mb-10">Oh...</h1>
         <div class="lg:pr-20">
           <p class="text-lg font-light">
-            La page que vous recherchez n'est pas disponible
+            Le changement que vous vouliez a été rejeté.
+            Peut-être avez-vous essayé de modifier quelque chose auquel vous n'aviez pas accès.
           </p>
           <p class="text-lg font-light">
             Essayez d'effectuer une nouvelle recherche ou utilisez le bouton "Retour" ci-dessous.
@@ -18,7 +19,7 @@
       </div>
     </div>
     <div class="w-full md:w-1/2 text-center">
-      <%= image_tag("errors/not_found.svg", class: "", alt: "") %>
+      <%= image_tag("errors/unprocessable.svg", class: "", alt: "") %>
     </div>
   </div>
 </div>
