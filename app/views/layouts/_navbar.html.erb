@@ -1,7 +1,7 @@
 <nav class="px-2 py-4 bg-white border-gray-200 shadow-md sm:px-4">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <%= link_to(root_path, class: "flex items-center rounded-md", alt: "SMUCA Logo") do %>
-      <%= image_tag("logo/logo-blue.png", class: "mr-3 h-6 sm:h-9") %>
+      <%= image_tag("logo/logo-blue.png", class: "mr-3 h-6 sm:h-9", alt: "#{meta_product_name} logo") %>
       <span class="self-center text-xl font-semibold uppercase whitespace-nowrap hover:text-gray-700">Smuca</span>
     <% end %>
     <div class="flex items-center md:order-2">
@@ -9,7 +9,7 @@
         <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
           <span class="sr-only">Open user menu</span>
-          <%= image_tag(current_user.avatar, class: "w-8 h-8 rounded-full object-cover object-top", alt: "user photo") %>
+          <%= image_tag(current_user.avatar, class: "w-8 h-8 rounded-full object-cover object-top", alt: "#{current_user.full_name} avatar") %>
         </button>
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow" id="dropdown"
         style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(1036.5px, 881.5px, 0px);"
