@@ -18,6 +18,14 @@ class User < ApplicationRecord
     self.role ||= :user
   end
 
+  # # Add a default scope
+
+  # # Hide specific record from All select * type queries
+
+  # # To avoid default scope in some query, use Model.unscoped
+
+  # default_scope { where.not(email: 'super.admin@smuca.fr') }
+
   # User avatar with Active Storage
 
   has_one_attached :avatar
